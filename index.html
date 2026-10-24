@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Gaurav R. Dange — Electrical Engineer with experience in aerospace manufacturing, semiconductor equipment R&D, embedded systems, hardware validation, and wireless sensing."
+    content="Gaurav R. Dange — Electrical Engineer with experience at Boeing and Ichor Systems across hardware, embedded systems, manufacturing engineering, test automation, controls, and wireless sensing."
   />
 
   <title>Gaurav R. Dange | Electrical Engineer</title>
@@ -19,14 +19,14 @@
   <style>
 
     :root{
-      --bg:#0c1b2a;
-      --surface:#11263a;
-      --surface2:#162d43;
+      --bg:#0b1927;
+      --surface:#112538;
+      --surface2:#152d42;
+      --accent:#d38a48;
       --cream:#f4f0e8;
-      --text:#d9e1e8;
-      --muted:#9eafbd;
-      --accent:#d18a49;
-      --line:#29455d;
+      --text:#d5dee6;
+      --muted:#98aab9;
+      --line:#29465e;
       --max:1160px;
     }
 
@@ -40,6 +40,8 @@
 
     body{
       margin:0;
+      background:var(--bg);
+      color:var(--cream);
       font-family:
         Inter,
         ui-sans-serif,
@@ -49,14 +51,8 @@
         "Segoe UI",
         sans-serif;
 
-      background:var(--bg);
-      color:var(--cream);
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
-    }
-
-    img{
-      max-width:100%;
     }
 
     a{
@@ -64,9 +60,11 @@
       text-decoration:none;
     }
 
+    img{
+      max-width:100%;
+    }
+
     section{
-      content-visibility:auto;
-      contain-intrinsic-size:900px;
       scroll-margin-top:80px;
     }
 
@@ -75,38 +73,40 @@
       margin:auto;
     }
 
+    .section{
+      padding:90px 0;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+
     .eyebrow{
       color:var(--accent);
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.16em;
       text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:.76rem;
+      font-weight:800;
     }
 
     h1,
     h2,
     h3,
+    h4,
     p{
       margin-top:0;
     }
 
     h2{
-      font-size:clamp(2rem,4vw,3.35rem);
+      margin:.3rem 0 1rem;
+      font-size:clamp(2.2rem,4vw,3.5rem);
       line-height:1.05;
       letter-spacing:-.035em;
-      margin-bottom:20px;
     }
 
     .intro{
-      max-width:790px;
-      color:#c6d1da;
+      max-width:800px;
+      color:#c4d0da;
       font-size:1.06rem;
     }
 
-    .section{
-      padding:92px 0;
-      border-top:1px solid rgba(255,255,255,.07);
-    }
 
 
     /* NAV */
@@ -115,8 +115,8 @@
       position:sticky;
       top:0;
       z-index:20;
-      background:#0c1b2af2;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      background:#0b1927f5;
+      border-bottom:1px solid rgba(255,255,255,.07);
     }
 
     .nav-inner{
@@ -133,9 +133,9 @@
 
     .nav-links{
       display:flex;
-      gap:25px;
+      gap:24px;
       color:var(--muted);
-      font-size:.92rem;
+      font-size:.9rem;
     }
 
     .nav-links a{
@@ -147,24 +147,25 @@
     }
 
 
+
     /* HERO */
 
     .hero{
-      padding:82px 0 94px;
+      padding:82px 0 70px;
     }
 
     .hero-grid{
       display:grid;
       grid-template-columns:1.18fr .82fr;
-      gap:64px;
+      gap:60px;
       align-items:center;
     }
 
     .hero h1{
-      font-size:clamp(3.6rem,7.5vw,7rem);
-      line-height:.9;
+      margin:.2em 0 .25em;
+      font-size:clamp(3.8rem,7.5vw,7.2rem);
+      line-height:.88;
       letter-spacing:-.06em;
-      margin:.18em 0 .28em;
     }
 
     .hero h1 span{
@@ -173,14 +174,14 @@
 
     .hero-text{
       max-width:720px;
-      color:#d8e0e7;
-      font-size:clamp(1.08rem,2vw,1.38rem);
+      color:#d6dfe6;
+      font-size:clamp(1.08rem,2vw,1.36rem);
     }
 
     .buttons{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
+      gap:12px;
       margin-top:30px;
     }
 
@@ -208,89 +209,92 @@
 
     .photo-card{
       padding:11px;
-      border:1px solid var(--line);
-      border-radius:26px;
       background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:24px;
     }
 
     .photo-card img{
       width:100%;
       display:block;
-      border-radius:18px;
+      border-radius:16px;
     }
 
     .photo-caption{
-      padding:13px 8px 5px;
+      padding:12px 7px 4px;
       color:var(--muted);
       font-size:.84rem;
     }
 
 
-    /* HIGHLIGHT STATS */
+
+    /* HERO HIGHLIGHTS */
 
     .highlights{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:14px;
-      margin-top:40px;
+      margin-top:52px;
     }
 
     .highlight{
-      padding:22px;
-      min-height:120px;
+      min-height:122px;
+      padding:21px;
+      background:var(--surface);
       border:1px solid var(--line);
       border-radius:18px;
-      background:var(--surface);
     }
 
     .highlight strong{
       display:block;
-      margin-bottom:6px;
+      margin-bottom:7px;
       font-size:1.45rem;
-      line-height:1.1;
+      line-height:1.08;
     }
 
     .highlight span{
       color:var(--muted);
-      font-size:.86rem;
+      font-size:.85rem;
     }
+
 
 
     /* EXPERIENCE */
 
     .experience-list{
       display:grid;
-      gap:30px;
-      margin-top:42px;
+      gap:28px;
+      margin-top:40px;
     }
 
     .experience-card{
       display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      border:1px solid var(--line);
-      border-radius:24px;
+      grid-template-columns:.78fr 1.22fr;
       overflow:hidden;
       background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:24px;
     }
 
     .experience-visual{
-      min-height:350px;
-      background:#e9edf0;
+      min-height:360px;
+      background:#e7ebef;
     }
 
     .experience-visual img{
+      display:block;
       width:100%;
       height:100%;
       object-fit:cover;
-      display:block;
     }
 
     .experience-card.ichor .experience-visual{
-      background:#c95d28;
+      background:white;
     }
 
     .experience-card.ichor .experience-visual img{
       object-fit:contain;
+      padding:18px;
     }
 
     .experience-content{
@@ -298,21 +302,21 @@
     }
 
     .experience-content h3{
-      font-size:1.8rem;
-      line-height:1.15;
-      margin:.3rem 0;
+      margin:.3rem 0 .2rem;
+      font-size:1.85rem;
+      line-height:1.1;
     }
 
     .job-title{
-      color:#c7d2dc;
-      font-weight:650;
       margin-bottom:18px;
+      color:#c4d0da;
+      font-weight:650;
     }
 
     .experience-content ul{
-      padding-left:1.2rem;
       margin:0;
-      color:#bdc9d3;
+      padding-left:1.2rem;
+      color:#bdc8d1;
     }
 
     .experience-content li{
@@ -320,18 +324,17 @@
     }
 
     .credit{
-      color:#7f95a5;
-      font-size:.72rem;
       margin-top:17px;
+      color:#7f94a4;
+      font-size:.72rem;
     }
 
 
-    /* OTHER ROLES */
+
+    /* OTHER EXPERIENCE */
 
     .other-roles{
-      margin-top:48px;
-      display:grid;
-      gap:0;
+      margin-top:46px;
       border-top:1px solid var(--line);
     }
 
@@ -345,14 +348,14 @@
 
     .role-date{
       color:var(--accent);
+      font-size:.86rem;
       font-weight:800;
-      font-size:.88rem;
     }
 
     .role-company{
+      margin-top:5px;
       color:var(--muted);
       font-size:.82rem;
-      margin-top:4px;
     }
 
     .role h3{
@@ -360,10 +363,16 @@
       font-size:1.3rem;
     }
 
-    .role p{
+    .role ul{
       margin:0;
-      color:#bcc8d2;
+      padding-left:1.1rem;
+      color:#bbc7d1;
     }
+
+    .role li{
+      margin:.45rem 0;
+    }
+
 
 
     /* PROJECTS */
@@ -372,28 +381,28 @@
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:18px;
-      margin-top:38px;
+      margin-top:40px;
     }
 
     .project{
-      padding:27px;
+      padding:28px;
+      background:var(--surface);
       border:1px solid var(--line);
       border-radius:20px;
-      background:var(--surface);
       transition:
-        border-color .15s ease,
-        transform .15s ease;
+        transform .15s ease,
+        border-color .15s ease;
     }
 
     .project:hover{
       transform:translateY(-2px);
-      border-color:#456a87;
+      border-color:#456b88;
     }
 
     .project h3{
-      font-size:1.32rem;
-      line-height:1.25;
-      margin:.55rem 0 .7rem;
+      margin:.55rem 0 .8rem;
+      font-size:1.4rem;
+      line-height:1.2;
     }
 
     .project p,
@@ -402,11 +411,11 @@
     }
 
     .project ul{
-      padding-left:1.1rem;
+      padding-left:1.15rem;
     }
 
     .project li{
-      margin:.45rem 0;
+      margin:.48rem 0;
     }
 
     .result{
@@ -429,42 +438,43 @@
 
     .tag{
       padding:5px 9px;
-      border:1px solid #31536c;
+      border:1px solid #31526c;
       border-radius:999px;
-      color:#c9d6df;
       background:#19334b;
+      color:#cad6df;
       font-size:.74rem;
     }
+
 
 
     /* RESEARCH */
 
     .research-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:24px;
       margin-top:38px;
     }
 
     .research-card{
-      padding:27px;
+      padding:28px;
+      background:var(--surface);
       border:1px solid var(--line);
       border-radius:20px;
-      background:var(--surface);
     }
 
     .research-card h3{
-      margin:.4rem 0 .8rem;
-      font-size:1.4rem;
+      margin:.45rem 0 .85rem;
+      font-size:1.45rem;
     }
 
     .research-card p,
     .research-card li{
-      color:#bdc9d3;
+      color:#bcc8d2;
     }
 
     .research-card ol{
-      padding-left:1.25rem;
+      padding-left:1.2rem;
     }
 
     .research-card li{
@@ -472,7 +482,8 @@
     }
 
 
-    /* SKILLS */
+
+    /* ABOUT */
 
     .skills{
       display:grid;
@@ -488,14 +499,14 @@
     }
 
     .skill h3{
+      margin-bottom:7px;
       color:var(--accent);
       font-size:1rem;
-      margin-bottom:7px;
     }
 
     .skill p{
       margin:0;
-      color:#c2ced8;
+      color:#c1cdd7;
     }
 
     .awards{
@@ -507,26 +518,27 @@
 
     .award{
       padding:10px 13px;
+      background:var(--surface);
       border:1px solid var(--line);
       border-radius:12px;
-      background:var(--surface);
-      color:#d2dce4;
+      color:#d3dce4;
     }
+
 
 
     /* FOOTER */
 
     footer{
-      padding:65px 0 40px;
+      padding:66px 0 40px;
       border-top:1px solid rgba(255,255,255,.07);
     }
 
     .footer-title{
-      max-width:700px;
-      font-size:clamp(2rem,5vw,4rem);
+      max-width:760px;
+      margin:.3em 0;
+      font-size:clamp(2.2rem,5vw,4rem);
       line-height:1;
       letter-spacing:-.04em;
-      margin:.25em 0;
     }
 
     .small{
@@ -535,7 +547,8 @@
     }
 
 
-    /* RESPONSIVE */
+
+    /* MOBILE */
 
     @media(max-width:900px){
 
@@ -545,12 +558,12 @@
         grid-template-columns:1fr;
       }
 
-      .highlights{
-        grid-template-columns:1fr 1fr;
-      }
-
       .project-grid{
         grid-template-columns:1fr;
+      }
+
+      .highlights{
+        grid-template-columns:1fr 1fr;
       }
 
       .experience-visual{
@@ -583,7 +596,7 @@
       }
 
       .hero{
-        padding:58px 0 70px;
+        padding:58px 0 65px;
       }
 
       .section{
@@ -599,13 +612,17 @@
 <body>
 
 
+
 <!-- NAVIGATION -->
 
 <nav>
 
   <div class="wrap nav-inner">
 
-    <a class="brand" href="#top">
+    <a
+      class="brand"
+      href="#top"
+    >
       GD ↗
     </a>
 
@@ -651,15 +668,20 @@
       </div>
 
       <h1>
+
         From circuit<br>
-        <span>to system.</span>
+
+        <span>
+          to system.
+        </span>
+
       </h1>
 
       <p class="hero-text">
 
         I’m Gaurav — an electrical engineer with hands-on experience across
         aerospace manufacturing, semiconductor equipment R&D, embedded systems,
-        hardware validation, test automation, and wireless sensing.
+        hardware validation, controls, test automation, and wireless sensing.
 
       </p>
 
@@ -684,12 +706,12 @@
     </div>
 
 
+
     <div class="photo-card">
 
       <img
         src="graduation.jpg"
         alt="Gaurav Dange at Oregon State University graduation"
-        fetchpriority="high"
       />
 
       <div class="photo-caption">
@@ -703,13 +725,17 @@
   </div>
 
 
+
   <div class="wrap">
 
     <div class="highlights">
 
+
       <div class="highlight">
 
-        <strong>3.79</strong>
+        <strong>
+          3.79
+        </strong>
 
         <span>
           GPA / 4.00
@@ -720,7 +746,9 @@
 
       <div class="highlight">
 
-        <strong>Boeing</strong>
+        <strong>
+          Boeing
+        </strong>
 
         <span>
           777 / 777X Manufacturing Electrical Engineering
@@ -731,10 +759,12 @@
 
       <div class="highlight">
 
-        <strong>Ichor Systems</strong>
+        <strong>
+          Ichor Systems
+        </strong>
 
         <span>
-          Electrical Engineering · R&D
+          Electrical Engineering · Research & Development
         </span>
 
       </div>
@@ -742,13 +772,16 @@
 
       <div class="highlight">
 
-        <strong>2026</strong>
+        <strong>
+          Honors B.S.
+        </strong>
 
         <span>
-          Honors B.S. Electrical & Computer Engineering
+          Electrical & Computer Engineering · 2026
         </span>
 
       </div>
+
 
     </div>
 
@@ -777,15 +810,16 @@
 
     <p class="intro">
 
-      My experience spans aerospace manufacturing, semiconductor equipment R&D,
-      embedded systems, hardware validation, test automation, IT support, and
-      technical education.
+      From semiconductor R&D to aircraft production, my experience has centered
+      on understanding complex systems and turning engineering requirements
+      into hardware, software, tests, and manufacturing solutions that work.
 
     </p>
 
 
 
     <div class="experience-list">
+
 
 
       <!-- BOEING -->
@@ -796,9 +830,8 @@
 
           <img
             src="https://www.boeing.cn/upfiles/news/2020050602.jpg"
-            alt="Boeing 777X"
+            alt="Boeing 777X aircraft"
             loading="lazy"
-            decoding="async"
           />
 
         </div>
@@ -808,7 +841,7 @@
 
           <div class="eyebrow">
 
-            APR – SEP 2026 · Everett, Washington
+            APR 2026 – SEP 2026 · Washington
 
           </div>
 
@@ -818,7 +851,7 @@
 
           <div class="job-title">
 
-            Manufacturing Electrical Engineering Intern · 777 / 777X Systems
+            Manufacturing Electrical Engineering Intern
 
           </div>
 
@@ -827,40 +860,43 @@
 
             <li>
 
-              Translated engineering drawings, CAD data, bills of materials,
-              and installation requirements into production-ready electrical
-              installation plans and visual work instructions.
+              Interpreted drawings, CATIA models, ENOVIA data, and BOM reports
+              for 777 electrical installation planning.
 
             </li>
 
             <li>
 
-              Reviewed aircraft layouts for part placement, orientation,
-              installation sequence, mechanic access, and clearance using
-              CATIA, IVT, ENOVIA, and production engineering data.
+              Reviewed aircraft system layouts to verify part placement,
+              mechanic access, clearance, and installation sequence.
 
             </li>
 
             <li>
 
-              Created mechanic-focused CAD graphics that made complex engineering
-              information easier to interpret on the factory floor.
+              Coordinated with mechanics and engineering teams to resolve build
+              issues, nonconformances, and tooling concerns.
 
             </li>
 
             <li>
 
-              Collaborated with mechanics, design engineers, manufacturing
-              engineers, quality, and tooling teams to resolve build issues,
-              documentation concerns, and manufacturing nonconformances.
+              Supported quality reviews by identifying installation risks,
+              documentation gaps, and process improvement opportunities.
 
             </li>
 
             <li>
 
-              Improved installation documentation after identifying cases where
-              traditional engineering views did not clearly represent the
-              mechanic's installation perspective.
+              Created CAD-based shop-floor visuals for electrical and mechanical
+              installation support.
+
+            </li>
+
+            <li>
+
+              Converted engineering design requirements into simplified work
+              instructions for aircraft production use.
 
             </li>
 
@@ -885,9 +921,8 @@
 
           <img
             src="ichor-product.png"
-            alt="Ichor Systems semiconductor flow control hardware"
+            alt="Ichor Systems semiconductor flow-control hardware"
             loading="lazy"
-            decoding="async"
           />
 
         </div>
@@ -897,7 +932,7 @@
 
           <div class="eyebrow">
 
-            APR – SEP 2025 · Oregon
+            APR 2025 – SEP 2025 · Tualatin, Oregon
 
           </div>
 
@@ -916,51 +951,65 @@
 
             <li>
 
-              Worked across embedded firmware, hardware validation, PLC
-              integration, and automated test for semiconductor flow-control
-              systems.
+              <strong>Firmware —</strong>
+              Released a firmware version that enabled the flow controller to
+              operate and communicate through EtherCAT using a PLC.
 
             </li>
 
             <li>
 
-              Integrated EtherCAT communication with PLC control and validated
-              device transitions through PREOP, SAFEOP, and OP states.
+              <strong>Hardware —</strong>
+              Validated new components to ensure electrical compliance and PCB
+              footprint compatibility.
 
             </li>
 
             <li>
 
-              Developed Python Hardware API scripts to automate hardware testing,
-              data collection, and analysis.
+              <strong>Software —</strong>
+              Built Python-based Hardware API scripts to automate testing and
+              data analysis.
 
             </li>
 
             <li>
 
-              Verified component datasheets, electrical ratings, and PCB
-              footprint compatibility for hardware integration.
+              <strong>PLC —</strong>
+              Programmed and integrated PLC systems with embedded
+              firmware-controlled hardware.
 
             </li>
 
             <li>
 
-              Supported PCB, flow-controller, and transducer assembly, quality
-              checks, electrical integrity testing, and hardware troubleshooting.
+              <strong>Mechanical —</strong>
+              Assisted in assembling flow controller builds and performing
+              quality checks on PCBs and pressure transducers.
 
             </li>
 
             <li>
 
-              Used J-Link and GDB Server to debug and validate embedded firmware.
+              <strong>Testing —</strong>
+              Conducted integrity testing using automated test stands and manual
+              valve setups.
 
             </li>
 
             <li>
 
-              Evaluated a replacement flyback transformer for a high-voltage
-              piezo-drive design using the DRV2700EVM as the electrical
-              performance baseline.
+              <strong>Technical Documentation —</strong>
+              Authored setup and integration guides for the development
+              environment and EtherCAT communication.
+
+            </li>
+
+            <li>
+
+              <strong>Tooling —</strong>
+              Used J-Link, GDB Server, and embedded development tools for
+              firmware validation and system bring-up.
 
             </li>
 
@@ -968,7 +1017,7 @@
 
 
           <div class="credit">
-            Product image courtesy of Ichor Systems
+            Image courtesy of Ichor Systems
           </div>
 
         </div>
@@ -979,17 +1028,20 @@
 
 
 
-    <!-- OSU ROLES -->
+    <!-- OTHER EXPERIENCE -->
 
     <div class="other-roles">
 
 
+
+      <!-- UIT -->
+
       <div class="role">
 
         <div>
 
           <div class="role-date">
-            2023 – 2026
+            JUN 2023 – MAR 2025
           </div>
 
           <div class="role-company">
@@ -1002,19 +1054,37 @@
         <div>
 
           <h3>
-            Student Technician · University Information & Technology
+            UIT Technician
           </h3>
 
-          <p>
+          <ul>
 
-            Built, imaged, configured, and staged university workstations;
-            configured BIOS settings, Windows and Linux environments, backups,
-            printers, peripherals, and network connectivity. Resolved hardware,
-            software, operating-system, peripheral, and network support tickets,
-            performed on-site repairs, and developed technician training
-            materials.
+            <li>
+              Provided technical support across 12 colleges within the OSU
+              community and managed support-ticket requests.
+            </li>
 
-          </p>
+            <li>
+              Diagnosed and resolved software, operating-system, computer,
+              peripheral, and network issues.
+            </li>
+
+            <li>
+              Conducted technician training sessions and created instructional
+              documentation for software installation procedures.
+            </li>
+
+            <li>
+              Managed computer builds including imaging, backups, BIOS setup,
+              and network provisioning.
+            </li>
+
+            <li>
+              Performed Windows updates, BIOS updates, software installation,
+              printer configuration, and post-image system cleanup.
+            </li>
+
+          </ul>
 
         </div>
 
@@ -1022,16 +1092,18 @@
 
 
 
+      <!-- HONORS AMBASSADOR -->
+
       <div class="role">
 
         <div>
 
           <div class="role-date">
-            Oregon State University
+            MAY 2023 – JUL 2024
           </div>
 
           <div class="role-company">
-            Honors College
+            OSU Honors College
           </div>
 
         </div>
@@ -1040,16 +1112,33 @@
         <div>
 
           <h3>
-            Honors College Ambassador
+            Honors Ambassador
           </h3>
 
-          <p>
+          <ul>
 
-            Supported prospective-student outreach and Honors College activities,
-            sharing the student perspective with prospective students, families,
-            and the university community.
+            <li>
 
-          </p>
+              Promoted Honors College programs and initiatives while engaging
+              with more than 500 prospective students and university partners.
+
+            </li>
+
+            <li>
+
+              Supported administrative operations and helped manage events for
+              200+ students.
+
+            </li>
+
+            <li>
+
+              Helped foster an inclusive Honors College community by connecting
+              students from diverse backgrounds and experiences.
+
+            </li>
+
+          </ul>
 
         </div>
 
@@ -1057,16 +1146,18 @@
 
 
 
+      <!-- TABLE TENNIS PRESIDENT -->
+
       <div class="role">
 
         <div>
 
           <div class="role-date">
-            Oregon State University
+            MAR 2024 – JAN 2025
           </div>
 
           <div class="role-company">
-            Mathematics
+            Oregon State University
           </div>
 
         </div>
@@ -1075,20 +1166,84 @@
         <div>
 
           <h3>
-            Calculus Learning Assistant
+            President · Table Tennis Club
           </h3>
 
-          <p>
+          <ul>
 
-            Supported students learning calculus through collaborative
-            problem-solving and peer instruction while developing the ability
-            to explain technical and mathematical concepts clearly.
+            <li>
+              Oversaw club operations, event planning, tournament organization,
+              and member engagement.
+            </li>
 
-          </p>
+            <li>
+              Coordinated with recreation-center leadership to secure facilities
+              and support for events.
+            </li>
+
+            <li>
+              Managed club resources and budget allocation.
+            </li>
+
+            <li>
+              Led initiatives to increase student participation and create a
+              welcoming community.
+            </li>
+
+          </ul>
 
         </div>
 
       </div>
+
+
+
+      <!-- TREASURER -->
+
+      <div class="role">
+
+        <div>
+
+          <div class="role-date">
+            APR 2022 – MAR 2025
+          </div>
+
+          <div class="role-company">
+            Oregon State University
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Treasurer · Table Tennis Club
+          </h3>
+
+          <ul>
+
+            <li>
+              Managed the club finance account, annual budget reports, dues,
+              reimbursements, and expenditures.
+            </li>
+
+            <li>
+              Organized fundraising activities to support club operations.
+            </li>
+
+            <li>
+              Coordinated with university officials to maintain transparent and
+              responsible financial operations.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
 
     </div>
 
@@ -1108,17 +1263,18 @@
   <div class="wrap">
 
     <div class="eyebrow">
-      02 / Projects
+      02 / Selected Engineering Work
     </div>
 
     <h2>
-      From ideas to working hardware.
+      Hardware, systems, and engineering problems.
     </h2>
 
     <p class="intro">
 
-      Selected engineering projects across wireless sensing, analog IC design,
-      embedded systems, RF, digital logic, networking, and signal processing.
+      A selection of projects from coursework, research, Boeing, and Ichor that
+      best represent the kind of engineering work I enjoy — hardware design,
+      embedded systems, system integration, test, and troubleshooting.
 
     </p>
 
@@ -1127,12 +1283,13 @@
     <div class="project-grid">
 
 
+
       <!-- LORA -->
 
       <article class="project">
 
         <div class="eyebrow">
-          Capstone
+          Capstone · Wireless Systems
         </div>
 
         <h3>
@@ -1141,9 +1298,9 @@
 
         <p>
 
-          Designed and built a multi-node wireless sensor network intended to
-          explore low-cost wildfire detection in remote areas where traditional
-          communication infrastructure may be limited.
+          Led development of a multi-node wildfire-detection system designed to
+          explore long-range environmental sensing in areas where conventional
+          network infrastructure may be limited.
 
         </p>
 
@@ -1152,30 +1309,31 @@
 
           <li>
 
-            Integrated ESP32 controllers, RFM95W LoRa radios, BME280
-            environmental sensors, MQ-2 smoke sensors, OLED displays, and
-            battery regulation.
+            Integrated ESP32 controllers with RFM95W LoRa radios, BME280
+            environmental sensors, MQ-2 smoke sensing, displays, and power
+            regulation.
 
           </li>
 
           <li>
 
-            Implemented a transmitter → relay → receiver architecture with
-            packet forwarding and TTL-based multi-hop communication.
+            Developed a transmitter → relay → receiver network architecture with
+            TTL-based multi-hop packet forwarding.
 
           </li>
 
           <li>
 
-            Worked on system integration, PCB design, sensor validation,
-            enclosure development, and field testing.
+            Studied chirp spread spectrum and evaluated trade-offs between
+            communication range, reliability, latency, and power consumption.
 
           </li>
 
           <li>
 
-            Evaluated packet delivery, range, RSSI/SNR, response time, and
-            deployment considerations.
+            Performed outdoor field testing and evaluated packet delivery,
+            signal behavior, network latency, and practical deployment
+            constraints.
 
           </li>
 
@@ -1184,9 +1342,9 @@
 
         <div class="result">
 
-          <strong>Outcome:</strong>
-          Demonstrated communication over at least 500 m during outdoor testing
-          and received Oregon State University's Environmental Impact Award.
+          <strong>Result:</strong>
+          Communicated over at least 500 m during outdoor testing and received
+          Oregon State University’s Environmental Impact Award.
 
         </div>
 
@@ -1197,8 +1355,7 @@
           <span class="tag">RFM95W</span>
           <span class="tag">LoRa</span>
           <span class="tag">915 MHz</span>
-          <span class="tag">PCB Design</span>
-          <span class="tag">BME280</span>
+          <span class="tag">Wireless Sensors</span>
 
         </div>
 
@@ -1220,9 +1377,8 @@
 
         <p>
 
-          Designed and simulated a transistor-level two-stage CMOS operational
-          amplifier while balancing gain, bandwidth, output swing, biasing, and
-          closed-loop stability.
+          Designed and simulated a two-stage CMOS operational amplifier at the
+          transistor level in Cadence Virtuoso.
 
         </p>
 
@@ -1230,19 +1386,30 @@
         <ul>
 
           <li>
-            Designed the differential input and second gain stage.
+
+            Designed a PMOS differential input pair with an NMOS active load to
+            convert the differential signal into a single-ended output.
+
           </li>
 
           <li>
-            Sized MOSFET devices based on operating-point requirements.
+
+            Used a common-source second stage to provide additional gain.
+
           </li>
 
           <li>
-            Applied Miller compensation to improve phase margin.
+
+            Explored design trade-offs involving voltage gain, headroom,
+            frequency response, stability, and MOS device sizing.
+
           </li>
 
           <li>
-            Evaluated DC, AC, transient, and stability behavior.
+
+            Used simulation and debugging to build intuition around transistor
+            operation, small-signal behavior, and frequency compensation.
+
           </li>
 
         </ul>
@@ -1251,9 +1418,10 @@
         <div class="tags">
 
           <span class="tag">Cadence Virtuoso</span>
-          <span class="tag">0.18 µm CMOS</span>
-          <span class="tag">Analog IC Design</span>
-          <span class="tag">Miller Compensation</span>
+          <span class="tag">CMOS</span>
+          <span class="tag">Analog Design</span>
+          <span class="tag">Differential Pair</span>
+          <span class="tag">Frequency Compensation</span>
 
         </div>
 
@@ -1261,7 +1429,72 @@
 
 
 
-      <!-- ANTENNA -->
+      <!-- EMBEDDED -->
+
+      <article class="project">
+
+        <div class="eyebrow">
+          Embedded Systems
+        </div>
+
+        <h3>
+          ATmega32U4 Embedded System Design
+        </h3>
+
+        <p>
+
+          Developed low-level embedded firmware in C and AVR Assembly while
+          working directly with microcontroller peripherals and hardware
+          registers.
+
+        </p>
+
+
+        <ul>
+
+          <li>
+            Developed an LCD driver from the hardware interface level.
+          </li>
+
+          <li>
+
+            Implemented delay-based, shift-register, and non-blocking debouncing
+            approaches for user inputs.
+
+          </li>
+
+          <li>
+
+            Built motor and LED control systems using hardware timers and PWM.
+
+          </li>
+
+          <li>
+
+            Developed and debugged firmware in a Linux environment using direct
+            access to compilers, build tools, and embedded debugging utilities.
+
+          </li>
+
+        </ul>
+
+
+        <div class="tags">
+
+          <span class="tag">ATmega32U4</span>
+          <span class="tag">Embedded C</span>
+          <span class="tag">AVR Assembly</span>
+          <span class="tag">PWM</span>
+          <span class="tag">Timers</span>
+          <span class="tag">Linux</span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- RF -->
 
       <article class="project">
 
@@ -1275,8 +1508,8 @@
 
         <p>
 
-          Modeled and analyzed a multi-element dipole array designed to produce
-          broadside radiation for cellular-style coverage.
+          Modeled and analyzed a multi-element dipole antenna array intended to
+          produce broadside radiation for cellular-style coverage.
 
         </p>
 
@@ -1285,22 +1518,22 @@
 
           <li>
 
-            Used MATLAB to study element spacing, array factor, directivity,
+            Used MATLAB to analyze array factor, element spacing, directivity,
             and sidelobe behavior.
 
           </li>
 
           <li>
 
-            Modeled antenna geometry in HFSS and compared simulated radiation
-            patterns with theoretical behavior.
+            Developed the antenna model in HFSS and compared simulated
+            full-wave results with theoretical expectations.
 
           </li>
 
           <li>
 
-            Evaluated practical tradeoffs between spacing, pattern shape,
-            and coverage.
+            Evaluated the relationship between element spacing, radiation
+            pattern shape, and practical coverage.
 
           </li>
 
@@ -1320,23 +1553,23 @@
 
 
 
-      <!-- EMBEDDED -->
+      <!-- ICHOR COUPLED INDUCTOR EOL -->
 
       <article class="project">
 
         <div class="eyebrow">
-          Embedded Systems
+          Ichor Systems · Hardware Validation
         </div>
 
         <h3>
-          Embedded Firmware & Peripheral Control
+          Coupled Inductor EOL Replacement
         </h3>
 
         <p>
 
-          Developed low-level firmware for AVR-based embedded systems,
-          controlling hardware directly through registers and peripheral
-          interfaces.
+          Evaluated a replacement coupled inductor for a high-voltage
+          piezo-drive circuit after the existing component reached
+          end-of-life.
 
         </p>
 
@@ -1344,30 +1577,53 @@
         <ul>
 
           <li>
-            Implemented timers, PWM, interrupts, and digital I/O.
+
+            Reviewed electrical specifications, operating requirements, PCB
+            footprint constraints, and component characteristics to identify
+            replacement candidates.
+
           </li>
 
           <li>
-            Integrated displays and user-input peripherals.
+
+            Used the DRV2700EVM piezo-driver platform as a reference baseline
+            for evaluating circuit behavior.
+
           </li>
 
           <li>
-            Developed firmware using C and AVR Assembly.
+
+            Compared output behavior, voltage performance, and ripple to
+            determine whether the replacement component could meet the design
+            requirements.
+
           </li>
 
           <li>
-            Debugged timing and hardware/firmware interactions.
+
+            Performed hardware verification to reduce the risk of replacing the
+            discontinued component in production hardware.
+
           </li>
 
         </ul>
 
 
+        <div class="result">
+
+          <strong>Focus:</strong>
+          Component qualification · electrical verification · EOL mitigation ·
+          hardware reliability
+
+        </div>
+
+
         <div class="tags">
 
-          <span class="tag">ATmega32U4</span>
-          <span class="tag">C</span>
-          <span class="tag">AVR Assembly</span>
-          <span class="tag">PWM</span>
+          <span class="tag">Coupled Inductor</span>
+          <span class="tag">DRV2700EVM</span>
+          <span class="tag">Hardware Validation</span>
+          <span class="tag">Component Qualification</span>
 
         </div>
 
@@ -1375,56 +1631,23 @@
 
 
 
-      <!-- FPGA -->
+      <!-- ICHOR ETHERCAT -->
 
       <article class="project">
 
         <div class="eyebrow">
-          Digital Logic
+          Ichor Systems · Firmware & Controls
         </div>
 
         <h3>
-          FPGA Dice Machine
+          EtherCAT & PLC Integration
         </h3>
 
         <p>
 
-          Designed a digital dice system on FPGA hardware using state-based
-          digital logic, simulation, and hardware verification.
-
-        </p>
-
-
-        <div class="tags">
-
-          <span class="tag">FPGA</span>
-          <span class="tag">SystemVerilog</span>
-          <span class="tag">ModelSim</span>
-          <span class="tag">Quartus</span>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- NETWORKING -->
-
-      <article class="project">
-
-        <div class="eyebrow">
-          Computer Networks
-        </div>
-
-        <h3>
-          ICMP Ping, Traceroute & Reliable Data Transfer
-        </h3>
-
-        <p>
-
-          Developed networking software using socket-level communication,
-          ICMP traffic, packet routing behavior, and reliable transport
-          mechanisms.
+          Integrated EtherCAT communication into an embedded flow-controller
+          platform so the device could be controlled and monitored through a
+          PLC-based automation system.
 
         </p>
 
@@ -1432,30 +1655,144 @@
         <ul>
 
           <li>
-            Built ICMP-based ping and traceroute functionality.
+
+            Developed and validated firmware supporting EtherCAT communication
+            between the embedded controller and PLC.
+
           </li>
 
           <li>
-            Worked with packet sequencing and acknowledgments.
+
+            Verified EtherCAT device-state transitions including PREOP,
+            SAFEOP, and OP.
+
           </li>
 
           <li>
-            Studied retransmission and packet-loss behavior.
+
+            Debugged communication behavior using J-Link, GDB Server, PLC tools,
+            and embedded development utilities.
+
+          </li>
+
+          <li>
+
+            Validated stable PLC control after firmware initialization and
+            worked toward supporting multi-device daisy-chain operation.
+
+          </li>
+
+          <li>
+
+            Created technical documentation describing development setup and
+            EtherCAT integration.
+
           </li>
 
         </ul>
 
 
+        <div class="result">
+
+          <strong>Result:</strong>
+          Demonstrated stable PLC control of the embedded flow controller
+          through EtherCAT.
+
+        </div>
+
+
         <div class="tags">
 
-          <span class="tag">Sockets</span>
-          <span class="tag">ICMP</span>
-          <span class="tag">Networking</span>
-          <span class="tag">Reliable Data Transfer</span>
+          <span class="tag">EtherCAT</span>
+          <span class="tag">PLC</span>
+          <span class="tag">TwinCAT</span>
+          <span class="tag">Embedded Firmware</span>
+          <span class="tag">J-Link</span>
+          <span class="tag">GDB</span>
 
         </div>
 
       </article>
+
+
+
+      <!-- BOEING PROJECT -->
+
+      <article class="project">
+
+        <div class="eyebrow">
+          Boeing · Manufacturing Engineering
+        </div>
+
+        <h3>
+          777X Installation Visualization & Work Instructions
+        </h3>
+
+        <p>
+
+          Improved aircraft installation documentation by converting complex
+          engineering geometry into visual instructions that better reflected
+          how mechanics actually performed the installation.
+
+        </p>
+
+
+        <ul>
+
+          <li>
+
+            Identified cases where traditional top-down engineering drawings did
+            not clearly communicate installation geometry from the mechanic’s
+            working perspective.
+
+          </li>
+
+          <li>
+
+            Used CATIA geometry and aircraft design data to create clearer,
+            mechanic-oriented installation graphics.
+
+          </li>
+
+          <li>
+
+            Applied the approach to trim-air-duct installation work involving
+            recurring manufacturing nonconformances.
+
+          </li>
+
+          <li>
+
+            Coordinated with manufacturing and design engineering teams to
+            improve installation documentation and reduce ambiguity on the
+            factory floor.
+
+          </li>
+
+        </ul>
+
+
+        <div class="result">
+
+          <strong>Engineering theme:</strong>
+          Turning design intent into clear, usable manufacturing instructions.
+
+        </div>
+
+
+        <div class="tags">
+
+          <span class="tag">CATIA</span>
+          <span class="tag">777X</span>
+          <span class="tag">Manufacturing Engineering</span>
+          <span class="tag">Work Instructions</span>
+          <span class="tag">CAD Visualization</span>
+
+        </div>
+
+      </article>
+
+
 
     </div>
 
@@ -1465,7 +1802,7 @@
 
 
 
-<!-- RESEARCH -->
+<!-- HONORS RESEARCH -->
 
 <section
   class="section"
@@ -1501,19 +1838,18 @@
 
         <p>
 
-          My Honors thesis extended the wildfire-detection capstone by
-          evaluating whether LoRa communication could realistically support
-          a distributed wildfire sensor network under practical environmental
-          and network conditions.
+          My Honors thesis extended the wildfire-detection capstone by examining
+          whether LoRa communication could realistically support a distributed
+          wildfire sensor network beyond the conditions demonstrated during
+          prototype testing.
 
         </p>
 
         <p>
 
           The analysis focused on communication range, packet reliability,
-          latency, and energy consumption while examining the effects of
-          vegetation, relay links, transmission timing, and sensor-node power
-          requirements.
+          latency, environmental propagation loss, relay behavior, and sensor
+          node energy consumption.
 
         </p>
 
@@ -1526,7 +1862,7 @@
             target="_blank"
             rel="noopener"
           >
-            Read Honors Thesis PDF
+            Read Honors Thesis
           </a>
 
         </div>
@@ -1538,39 +1874,41 @@
       <div class="research-card">
 
         <h3>
-          Key engineering questions
+          Key findings
         </h3>
-
 
         <ol>
 
           <li>
 
-            <strong>Range</strong> —
-            How does propagation loss change when LoRa moves from open-space
-            testing into vegetation and forest environments?
+            <strong>Range —</strong>
+            Actual field performance can vary significantly with vegetation,
+            terrain, node placement, and environmental loss.
 
           </li>
 
           <li>
 
-            <strong>Reliability</strong> —
-            How does end-to-end packet delivery change as relay links are added?
+            <strong>Reliability —</strong>
+            End-to-end delivery decreases as additional independent relay links
+            are added to the communication path.
 
           </li>
 
           <li>
 
-            <strong>Latency</strong> —
-            Does LoRa airtime or the sensor reporting interval dominate response
-            time?
+            <strong>Latency —</strong>
+            The approximately 60-second reporting interval has a much greater
+            impact on response time than LoRa packet airtime.
 
           </li>
 
           <li>
 
-            <strong>Energy</strong> —
-            Which components dominate the sensor node's total power requirement?
+            <strong>Energy —</strong>
+            The MQ-2 sensor heater dominates the sensor-node power requirement,
+            while LoRa transmission contributes comparatively little average
+            power.
 
           </li>
 
@@ -1585,6 +1923,7 @@
         </div>
 
       </div>
+
 
     </div>
 
@@ -1619,11 +1958,12 @@
 
       I graduated from Oregon State University with an Honors B.S. in
       Electrical and Computer Engineering and a Minor in Computer Science.
-      My experience spans aerospace manufacturing, semiconductor equipment
-      R&D, electrical hardware, embedded systems, analog design, wireless
-      communication, and automated test.
+      My experience spans electrical hardware, embedded systems, semiconductor
+      equipment R&D, aerospace manufacturing, controls, wireless communication,
+      analog design, and automated test.
 
     </p>
+
 
 
     <div class="skills">
@@ -1632,13 +1972,13 @@
       <div class="skill">
 
         <h3>
-          Circuits & Simulation
+          Circuits & Hardware
         </h3>
 
         <p>
 
           Cadence Virtuoso · OrCAD / Allegro · KiCad · LTspice · NgSpice ·
-          MATLAB · HFSS
+          Component Validation · PCB Integration
 
         </p>
 
@@ -1648,7 +1988,7 @@
       <div class="skill">
 
         <h3>
-          Firmware & Software
+          Embedded & Software
         </h3>
 
         <p>
@@ -1664,13 +2004,28 @@
       <div class="skill">
 
         <h3>
-          Integration & Verification
+          Controls & Verification
         </h3>
 
         <p>
 
-          EtherCAT · PLCs · TwinCAT · J-Link · GDB Server · SystemVerilog ·
-          ModelSim · Intel Quartus Prime
+          EtherCAT · PLCs · TwinCAT · J-Link · GDB Server · Hardware Test ·
+          System Bring-Up
+
+        </p>
+
+      </div>
+
+
+      <div class="skill">
+
+        <h3>
+          RF & Digital
+        </h3>
+
+        <p>
+
+          MATLAB · HFSS · LoRa · SystemVerilog · ModelSim · Intel Quartus Prime
 
         </p>
 
@@ -1686,13 +2041,31 @@
         <p>
 
           CATIA · IVT · ENOVIA · SolidWorks · BOM Review · Work Instructions ·
-          Hardware Validation
+          Manufacturing Support
 
         </p>
 
       </div>
 
+
+      <div class="skill">
+
+        <h3>
+          Technical Strengths
+        </h3>
+
+        <p>
+
+          Hardware Troubleshooting · Test Automation · Technical Documentation ·
+          System Integration · Cross-Functional Engineering
+
+        </p>
+
+      </div>
+
+
     </div>
+
 
 
     <div class="awards">
@@ -1713,6 +2086,10 @@
         OSU Honor Roll
       </span>
 
+      <span class="award">
+        MECOP Graduate
+      </span>
+
     </div>
 
   </div>
@@ -1728,15 +2105,21 @@
   <div class="wrap">
 
     <div class="eyebrow">
-      Electrical Engineering · Hardware · Test · Embedded Systems
+
+      Hardware · Embedded Systems · Test · Controls · Manufacturing
+
     </div>
 
     <h2 class="footer-title">
+
       Building useful systems from the hardware up.
+
     </h2>
 
     <div class="small">
+
       © 2026 Gaurav R. Dange
+
     </div>
 
   </div>
@@ -1744,5 +2127,7 @@
 </footer>
 
 
+
 </body>
+
 </html>
