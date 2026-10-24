@@ -2,33 +2,56 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
-  />
+  >
 
   <meta
     name="description"
-    content="Gaurav R. Dange — Electrical Engineer with experience at Boeing and Ichor Systems across hardware, embedded systems, manufacturing engineering, test automation, controls, and wireless sensing."
-  />
+    content="Gaurav R. Dange — Electrical Engineer with experience at Boeing and Ichor Systems across hardware, embedded systems, controls, manufacturing engineering, test, and wireless sensing."
+  >
 
   <title>Gaurav R. Dange | Electrical Engineer</title>
 
   <style>
 
+    /* =========================================================
+       VARIABLES
+       ========================================================= */
+
     :root{
-      --bg:#0b1927;
-      --surface:#112538;
-      --surface2:#152d42;
-      --accent:#d38a48;
-      --cream:#f4f0e8;
+      --bg:#091725;
+      --bg-soft:#0c1d2d;
+
+      --surface:#11263a;
+      --surface-2:#162e45;
+
+      --accent:#d58b49;
+      --accent-soft:#edb47c;
+
+      --cream:#f5f1e9;
       --text:#d5dee6;
       --muted:#98aab9;
-      --line:#29465e;
-      --max:1160px;
+
+      --line:#29475f;
+      --line-light:#3a607d;
+
+      --max:1180px;
+
+      --radius:20px;
+      --radius-large:26px;
+
+      --shadow:
+        0 18px 60px rgba(0,0,0,.18);
     }
+
+
+    /* =========================================================
+       BASE
+       ========================================================= */
 
     *{
       box-sizing:border-box;
@@ -40,8 +63,17 @@
 
     body{
       margin:0;
-      background:var(--bg);
+
+      background:
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(52,94,127,.13),
+          transparent 32%
+        ),
+        var(--bg);
+
       color:var(--cream);
+
       font-family:
         Inter,
         ui-sans-serif,
@@ -52,7 +84,14 @@
         sans-serif;
 
       line-height:1.65;
+
       -webkit-font-smoothing:antialiased;
+
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
     }
 
     a{
@@ -60,12 +99,12 @@
       text-decoration:none;
     }
 
-    img{
-      max-width:100%;
+    button{
+      font:inherit;
     }
 
     section{
-      scroll-margin-top:80px;
+      scroll-margin-top:86px;
     }
 
     .wrap{
@@ -74,16 +113,20 @@
     }
 
     .section{
-      padding:90px 0;
-      border-top:1px solid rgba(255,255,255,.07);
+      padding:96px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,.065);
     }
 
     .eyebrow{
       color:var(--accent);
+
+      font-size:.75rem;
+      font-weight:850;
+
+      letter-spacing:.17em;
       text-transform:uppercase;
-      letter-spacing:.16em;
-      font-size:.76rem;
-      font-weight:800;
     }
 
     h1,
@@ -95,32 +138,44 @@
     }
 
     h2{
-      margin:.3rem 0 1rem;
-      font-size:clamp(2.2rem,4vw,3.5rem);
-      line-height:1.05;
-      letter-spacing:-.035em;
+      margin:.25rem 0 1rem;
+
+      font-size:
+        clamp(2.2rem,4.5vw,3.65rem);
+
+      line-height:1.04;
+
+      letter-spacing:-.04em;
     }
 
     .intro{
-      max-width:800px;
+      max-width:810px;
+
       color:#c4d0da;
+
       font-size:1.06rem;
     }
 
 
-
-    /* NAV */
+    /* =========================================================
+       NAV
+       ========================================================= */
 
     nav{
       position:sticky;
       top:0;
-      z-index:20;
-      background:#0b1927f5;
-      border-bottom:1px solid rgba(255,255,255,.07);
+
+      z-index:50;
+
+      background:rgba(9,23,37,.94);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.07);
     }
 
     .nav-inner{
-      height:64px;
+      height:66px;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -128,44 +183,89 @@
 
     .brand{
       font-weight:900;
+
       letter-spacing:.08em;
     }
 
     .nav-links{
       display:flex;
-      gap:24px;
+      gap:25px;
+
       color:var(--muted);
+
       font-size:.9rem;
     }
 
     .nav-links a{
-      transition:color .15s ease;
+      position:relative;
+
+      transition:
+        color .18s ease;
     }
 
-    .nav-links a:hover{
+    .nav-links a::after{
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      right:100%;
+      bottom:-7px;
+
+      height:2px;
+
+      border-radius:10px;
+
+      background:var(--accent);
+
+      transition:
+        right .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
       color:var(--cream);
     }
 
+    .nav-links a.active::after{
+      right:0;
+    }
 
 
-    /* HERO */
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero{
-      padding:82px 0 70px;
+      min-height:calc(100vh - 66px);
+
+      padding:84px 0 64px;
+
+      display:flex;
+      align-items:center;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.18fr .82fr;
-      gap:60px;
+
+      grid-template-columns:
+        minmax(0,1.18fr)
+        minmax(320px,.82fr);
+
+      gap:66px;
+
       align-items:center;
     }
 
     .hero h1{
-      margin:.2em 0 .25em;
-      font-size:clamp(3.8rem,7.5vw,7.2rem);
-      line-height:.88;
-      letter-spacing:-.06em;
+      margin:.18em 0 .25em;
+
+      font-size:
+        clamp(4rem,7.6vw,7.4rem);
+
+      line-height:.86;
+
+      letter-spacing:-.065em;
     }
 
     .hero h1 span{
@@ -173,29 +273,81 @@
     }
 
     .hero-text{
-      max-width:720px;
-      color:#d6dfe6;
-      font-size:clamp(1.08rem,2vw,1.36rem);
+      max-width:730px;
+
+      color:#d8e1e8;
+
+      font-size:
+        clamp(1.08rem,2vw,1.38rem);
+    }
+
+    .hero-disciplines{
+      margin-top:20px;
+
+      display:flex;
+      gap:9px;
+      flex-wrap:wrap;
+    }
+
+    .discipline{
+      padding:6px 10px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:999px;
+
+      color:#bac8d3;
+
+      font-size:.76rem;
+
+      transition:
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+    }
+
+    .discipline.active{
+      color:var(--cream);
+
+      border-color:var(--accent);
+
+      transform:translateY(-2px);
     }
 
     .buttons{
+      margin-top:30px;
+
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:30px;
     }
 
     .btn{
+      padding:12px 19px;
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
-      padding:12px 19px;
+
+      border:
+        1px solid var(--accent);
+
       border-radius:999px;
-      border:1px solid var(--accent);
-      font-weight:750;
+
+      color:var(--cream);
+
+      font-weight:760;
+
+      cursor:pointer;
+
+      background:transparent;
+
       transition:
-        transform .15s ease,
-        background .15s ease;
+        transform .16s ease,
+        background .16s ease,
+        color .16s ease;
     }
 
     .btn:hover{
@@ -204,210 +356,473 @@
 
     .btn.primary{
       background:var(--accent);
+
       color:#111;
     }
 
+    .photo-wrap{
+      position:relative;
+    }
+
+    .photo-wrap::before{
+      content:"";
+
+      position:absolute;
+
+      width:70%;
+      height:70%;
+
+      right:-6%;
+      top:-6%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(213,139,73,.18),
+          transparent 67%
+        );
+
+      pointer-events:none;
+    }
+
     .photo-card{
+      position:relative;
+
       padding:11px;
+
       background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:var(--radius-large);
+
+      box-shadow:var(--shadow);
+
+      transform:
+        rotate(.8deg);
+
+      transition:
+        transform .3s ease;
+    }
+
+    .photo-card:hover{
+      transform:
+        rotate(0deg)
+        translateY(-4px);
     }
 
     .photo-card img{
-      width:100%;
       display:block;
-      border-radius:16px;
+
+      width:100%;
+
+      border-radius:18px;
     }
 
     .photo-caption{
-      padding:12px 7px 4px;
+      padding:
+        13px 8px 5px;
+
       color:var(--muted);
-      font-size:.84rem;
+
+      font-size:.83rem;
     }
 
 
-
-    /* HERO HIGHLIGHTS */
+    /* =========================================================
+       HIGHLIGHTS
+       ========================================================= */
 
     .highlights{
+      margin-top:58px;
+
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+
+      grid-template-columns:
+        repeat(4,1fr);
+
       gap:14px;
-      margin-top:52px;
     }
 
     .highlight{
-      min-height:122px;
-      padding:21px;
-      background:var(--surface);
-      border:1px solid var(--line);
+      padding:22px;
+
+      min-height:126px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--surface),
+          #0f2133
+        );
+
+      border:
+        1px solid var(--line);
+
       border-radius:18px;
+
+      transition:
+        transform .18s ease,
+        border-color .18s ease;
+    }
+
+    .highlight:hover{
+      transform:translateY(-3px);
+
+      border-color:#456a86;
     }
 
     .highlight strong{
       display:block;
-      margin-bottom:7px;
+
+      margin-bottom:8px;
+
       font-size:1.45rem;
+
       line-height:1.08;
     }
 
     .highlight span{
       color:var(--muted);
-      font-size:.85rem;
+
+      font-size:.84rem;
     }
 
 
-
-    /* EXPERIENCE */
+    /* =========================================================
+       EXPERIENCE
+       ========================================================= */
 
     .experience-list{
+      margin-top:42px;
+
       display:grid;
-      gap:28px;
-      margin-top:40px;
+      gap:30px;
     }
 
     .experience-card{
       display:grid;
-      grid-template-columns:.78fr 1.22fr;
+
+      grid-template-columns:
+        .8fr
+        1.2fr;
+
       overflow:hidden;
+
       background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:var(--radius-large);
+
+      box-shadow:
+        0 14px 45px rgba(0,0,0,.10);
+
+      transition:
+        transform .18s ease,
+        border-color .18s ease;
+    }
+
+    .experience-card:hover{
+      transform:translateY(-3px);
+
+      border-color:#416884;
     }
 
     .experience-visual{
-      min-height:360px;
-      background:#e7ebef;
+      min-height:370px;
+
+      overflow:hidden;
+
+      background:#e8ecef;
     }
 
     .experience-visual img{
-      display:block;
       width:100%;
       height:100%;
+
+      display:block;
+
       object-fit:cover;
+
+      transition:
+        transform .5s ease;
     }
 
-    .experience-card.ichor .experience-visual{
+    .experience-card:hover
+    .experience-visual img{
+      transform:scale(1.025);
+    }
+
+    .experience-card.ichor
+    .experience-visual{
       background:white;
     }
 
-    .experience-card.ichor .experience-visual img{
+    .experience-card.ichor
+    .experience-visual img{
       object-fit:contain;
+
       padding:18px;
     }
 
     .experience-content{
-      padding:32px;
+      padding:34px;
     }
 
     .experience-content h3{
       margin:.3rem 0 .2rem;
-      font-size:1.85rem;
+
+      font-size:1.9rem;
+
       line-height:1.1;
     }
 
     .job-title{
       margin-bottom:18px;
-      color:#c4d0da;
+
+      color:#c6d1da;
+
       font-weight:650;
     }
 
     .experience-content ul{
       margin:0;
+
       padding-left:1.2rem;
-      color:#bdc8d1;
+
+      color:#bdc9d3;
     }
 
     .experience-content li{
       margin:.55rem 0;
     }
 
+    .experience-tags{
+      margin-top:20px;
+
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+
     .credit{
-      margin-top:17px;
-      color:#7f94a4;
-      font-size:.72rem;
+      margin-top:15px;
+
+      color:#7890a1;
+
+      font-size:.71rem;
     }
 
 
+    /* =========================================================
+       OTHER ROLES
+       ========================================================= */
 
-    /* OTHER EXPERIENCE */
+    .other-title{
+      margin-top:54px;
+      margin-bottom:4px;
+
+      color:#dce4ea;
+
+      font-size:1.25rem;
+    }
 
     .other-roles{
-      margin-top:46px;
-      border-top:1px solid var(--line);
+      margin-top:14px;
+
+      border-top:
+        1px solid var(--line);
     }
 
     .role{
+      padding:28px 0;
+
       display:grid;
-      grid-template-columns:190px 1fr;
+
+      grid-template-columns:
+        190px
+        1fr;
+
       gap:34px;
-      padding:30px 0;
-      border-bottom:1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
     }
 
     .role-date{
       color:var(--accent);
-      font-size:.86rem;
-      font-weight:800;
+
+      font-size:.85rem;
+
+      font-weight:850;
     }
 
     .role-company{
-      margin-top:5px;
+      margin-top:4px;
+
       color:var(--muted);
-      font-size:.82rem;
+
+      font-size:.8rem;
     }
 
     .role h3{
       margin:0 0 8px;
-      font-size:1.3rem;
+
+      font-size:1.28rem;
     }
 
     .role ul{
       margin:0;
+
       padding-left:1.1rem;
-      color:#bbc7d1;
+
+      color:#bac7d1;
     }
 
     .role li{
-      margin:.45rem 0;
+      margin:.4rem 0;
     }
 
 
+    /* =========================================================
+       FILTERS
+       ========================================================= */
 
-    /* PROJECTS */
+    .filters{
+      margin-top:34px;
+      margin-bottom:26px;
+
+      display:flex;
+      gap:9px;
+      flex-wrap:wrap;
+    }
+
+    .filter-btn{
+      padding:8px 13px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:999px;
+
+      background:transparent;
+
+      color:#afbeca;
+
+      cursor:pointer;
+
+      font-size:.8rem;
+
+      transition:
+        background .18s ease,
+        color .18s ease,
+        border-color .18s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      color:#111;
+
+      background:var(--accent);
+
+      border-color:var(--accent);
+    }
+
+
+    /* =========================================================
+       PROJECTS
+       ========================================================= */
 
     .project-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap:18px;
-      margin-top:40px;
     }
 
     .project{
+      --mouse-x:50%;
+      --mouse-y:50%;
+
+      position:relative;
+
+      overflow:hidden;
+
       padding:28px;
+
       background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:20px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:var(--radius);
+
       transition:
-        transform .15s ease,
-        border-color .15s ease;
+        transform .18s ease,
+        border-color .18s ease,
+        opacity .2s ease;
+    }
+
+    .project::before{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+        radial-gradient(
+          320px circle at
+          var(--mouse-x)
+          var(--mouse-y),
+          rgba(213,139,73,.09),
+          transparent 45%
+        );
+
+      opacity:0;
+
+      pointer-events:none;
+
+      transition:
+        opacity .2s ease;
     }
 
     .project:hover{
-      transform:translateY(-2px);
+      transform:translateY(-3px);
+
       border-color:#456b88;
     }
 
+    .project:hover::before{
+      opacity:1;
+    }
+
+    .project.hidden{
+      display:none;
+    }
+
+    .project > *{
+      position:relative;
+
+      z-index:2;
+    }
+
     .project h3{
-      margin:.55rem 0 .8rem;
-      font-size:1.4rem;
+      margin:.55rem 0 .75rem;
+
+      font-size:1.42rem;
+
       line-height:1.2;
     }
 
-    .project p,
+    .project-summary,
     .project li{
-      color:#bcc8d2;
+      color:#bbc8d2;
     }
 
     .project ul{
@@ -415,62 +830,286 @@
     }
 
     .project li{
-      margin:.48rem 0;
-    }
-
-    .result{
-      margin-top:17px;
-      padding-top:15px;
-      border-top:1px solid var(--line);
-      color:#dfe6eb;
-    }
-
-    .result strong{
-      color:var(--accent);
+      margin:.46rem 0;
     }
 
     .tags{
       display:flex;
       flex-wrap:wrap;
+
       gap:7px;
-      margin-top:18px;
+
+      margin-top:17px;
     }
 
     .tag{
       padding:5px 9px;
-      border:1px solid #31526c;
+
+      border:
+        1px solid #31536c;
+
       border-radius:999px;
+
       background:#19334b;
-      color:#cad6df;
-      font-size:.74rem;
+
+      color:#cbd7df;
+
+      font-size:.73rem;
+    }
+
+    .case-button{
+      margin-top:18px;
+
+      padding:0;
+
+      border:none;
+
+      background:none;
+
+      color:var(--accent-soft);
+
+      cursor:pointer;
+
+      font-weight:750;
+
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .case-button span{
+      transition:
+        transform .2s ease;
+    }
+
+    .project.open
+    .case-button span{
+      transform:rotate(180deg);
+    }
+
+    .case-study{
+      max-height:0;
+
+      overflow:hidden;
+
+      opacity:0;
+
+      transition:
+        max-height .45s ease,
+        opacity .3s ease,
+        margin .3s ease;
+    }
+
+    .project.open
+    .case-study{
+      max-height:1000px;
+
+      opacity:1;
+
+      margin-top:20px;
+    }
+
+    .case-grid{
+      padding-top:19px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap:14px;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+    .case-item{
+      padding:15px;
+
+      background:#0d2031;
+
+      border-radius:14px;
+    }
+
+    .case-item strong{
+      display:block;
+
+      margin-bottom:5px;
+
+      color:var(--accent);
+
+      font-size:.75rem;
+
+      letter-spacing:.08em;
+
+      text-transform:uppercase;
+    }
+
+    .case-item p{
+      margin:0;
+
+      color:#becbd4;
+
+      font-size:.91rem;
     }
 
 
+    /* =========================================================
+       LORA DIAGRAM
+       ========================================================= */
 
-    /* RESEARCH */
+    .lora-diagram{
+      margin-top:23px;
+
+      padding:22px 15px;
+
+      display:grid;
+
+      grid-template-columns:
+        1fr
+        90px
+        1fr
+        90px
+        1fr;
+
+      gap:5px;
+
+      align-items:center;
+
+      background:#0c2031;
+
+      border:
+        1px solid #294b64;
+
+      border-radius:16px;
+    }
+
+    .node{
+      padding:14px 8px;
+
+      text-align:center;
+
+      background:var(--surface-2);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:13px;
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease;
+    }
+
+    .node:hover{
+      transform:translateY(-2px);
+
+      border-color:var(--accent);
+    }
+
+    .node strong{
+      display:block;
+
+      margin-bottom:4px;
+
+      font-size:.86rem;
+    }
+
+    .node small{
+      color:var(--muted);
+    }
+
+    .radio-link{
+      position:relative;
+
+      height:2px;
+
+      overflow:visible;
+
+      background:#375873;
+    }
+
+    .radio-link::after{
+      content:"";
+
+      position:absolute;
+
+      top:-2px;
+      left:0;
+
+      width:7px;
+      height:7px;
+
+      border-radius:50%;
+
+      background:var(--accent);
+
+      animation:
+        packet 2.4s linear infinite;
+    }
+
+    .radio-label{
+      position:absolute;
+
+      top:-22px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      color:var(--muted);
+
+      font-size:.67rem;
+    }
+
+    @keyframes packet{
+
+      from{
+        left:0;
+      }
+
+      to{
+        left:calc(100% - 7px);
+      }
+
+    }
+
+
+    /* =========================================================
+       RESEARCH
+       ========================================================= */
 
     .research-grid{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:24px;
       margin-top:38px;
+
+      display:grid;
+
+      grid-template-columns:
+        1.08fr
+        .92fr;
+
+      gap:22px;
     }
 
     .research-card{
       padding:28px;
+
       background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:20px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:var(--radius);
     }
 
     .research-card h3{
-      margin:.45rem 0 .85rem;
+      margin:.45rem 0 .8rem;
+
       font-size:1.45rem;
     }
 
     .research-card p,
     .research-card li{
-      color:#bcc8d2;
+      color:#bbc8d2;
     }
 
     .research-card ol{
@@ -481,76 +1120,184 @@
       margin:.65rem 0;
     }
 
+    .finding{
+      padding:14px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .finding:last-child{
+      border-bottom:none;
+    }
+
+    .finding strong{
+      color:var(--accent);
+    }
 
 
-    /* ABOUT */
+    /* =========================================================
+       ABOUT
+       ========================================================= */
 
     .skills{
+      margin-top:31px;
+
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap:14px;
-      margin-top:30px;
     }
 
     .skill{
       padding:21px;
-      border:1px solid var(--line);
+
+      border:
+        1px solid var(--line);
+
       border-radius:17px;
+
+      transition:
+        transform .18s ease,
+        border-color .18s ease;
+    }
+
+    .skill:hover{
+      transform:translateY(-2px);
+
+      border-color:#426882;
     }
 
     .skill h3{
       margin-bottom:7px;
+
       color:var(--accent);
+
       font-size:1rem;
     }
 
     .skill p{
       margin:0;
-      color:#c1cdd7;
+
+      color:#c1ced7;
     }
 
     .awards{
+      margin-top:27px;
+
       display:flex;
       flex-wrap:wrap;
+
       gap:10px;
-      margin-top:26px;
     }
 
     .award{
       padding:10px 13px;
+
       background:var(--surface);
-      border:1px solid var(--line);
+
+      border:
+        1px solid var(--line);
+
       border-radius:12px;
-      color:#d3dce4;
+
+      color:#d3dde4;
     }
 
 
-
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     footer{
-      padding:66px 0 40px;
-      border-top:1px solid rgba(255,255,255,.07);
+      padding:
+        70px 0
+        42px;
+
+      border-top:
+        1px solid rgba(255,255,255,.07);
     }
 
     .footer-title{
       max-width:760px;
+
       margin:.3em 0;
-      font-size:clamp(2.2rem,5vw,4rem);
+
+      font-size:
+        clamp(2.3rem,5vw,4.1rem);
+
       line-height:1;
+
       letter-spacing:-.04em;
     }
 
     .small{
       color:var(--muted);
+
       font-size:.86rem;
     }
 
 
+    /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
 
-    /* MOBILE */
+    .reveal{
+      opacity:0;
+
+      transform:
+        translateY(22px);
+
+      transition:
+        opacity .65s ease,
+        transform .65s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media
+    (prefers-reduced-motion:reduce){
+
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+
+        animation:none !important;
+
+        transition:none !important;
+      }
+
+      .reveal{
+        opacity:1;
+
+        transform:none;
+      }
+
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
     @media(max-width:900px){
+
+      .hero{
+        min-height:auto;
+      }
 
       .hero-grid,
       .experience-card,
@@ -563,7 +1310,8 @@
       }
 
       .highlights{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .experience-visual{
@@ -576,6 +1324,7 @@
 
       .role{
         grid-template-columns:1fr;
+
         gap:8px;
       }
 
@@ -585,22 +1334,71 @@
 
     }
 
-    @media(max-width:600px){
+
+    @media(max-width:650px){
 
       .nav-links{
         display:none;
+      }
+
+      .hero{
+        padding:
+          58px 0
+          62px;
+      }
+
+      .section{
+        padding:
+          72px 0;
       }
 
       .highlights{
         grid-template-columns:1fr;
       }
 
-      .hero{
-        padding:58px 0 65px;
+      .case-grid{
+        grid-template-columns:1fr;
       }
 
-      .section{
-        padding:70px 0;
+      .lora-diagram{
+        grid-template-columns:1fr;
+
+        gap:15px;
+      }
+
+      .radio-link{
+        width:2px;
+        height:45px;
+
+        margin:auto;
+      }
+
+      .radio-link::after{
+        left:-2px;
+        top:0;
+
+        animation:
+          packet-mobile 2.4s linear infinite;
+      }
+
+      .radio-label{
+        top:50%;
+        left:12px;
+
+        transform:
+          translateY(-50%);
+      }
+
+      @keyframes packet-mobile{
+
+        from{
+          top:0;
+        }
+
+        to{
+          top:calc(100% - 7px);
+        }
+
       }
 
     }
@@ -613,7 +1411,9 @@
 
 
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
 
 <nav>
 
@@ -628,19 +1428,31 @@
 
     <div class="nav-links">
 
-      <a href="#experience">
+      <a
+        href="#experience"
+        data-section="experience"
+      >
         Experience
       </a>
 
-      <a href="#projects">
+      <a
+        href="#projects"
+        data-section="projects"
+      >
         Projects
       </a>
 
-      <a href="#research">
+      <a
+        href="#research"
+        data-section="research"
+      >
         Research
       </a>
 
-      <a href="#about">
+      <a
+        href="#about"
+        data-section="about"
+      >
         About
       </a>
 
@@ -652,83 +1464,120 @@
 
 
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <header
   class="hero"
   id="top"
 >
 
-  <div class="wrap hero-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        Electrical Engineer
-      </div>
-
-      <h1>
-
-        From circuit<br>
-
-        <span>
-          to system.
-        </span>
-
-      </h1>
-
-      <p class="hero-text">
-
-        I’m Gaurav — an electrical engineer with hands-on experience across
-        aerospace manufacturing, semiconductor equipment R&D, embedded systems,
-        hardware validation, controls, test automation, and wireless sensing.
-
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="btn primary"
-          href="#experience"
-        >
-          View experience
-        </a>
-
-        <a
-          class="btn"
-          href="#projects"
-        >
-          Explore projects
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="photo-card">
-
-      <img
-        src="graduation.jpg"
-        alt="Gaurav Dange at Oregon State University graduation"
-      />
-
-      <div class="photo-caption">
-
-        Oregon State University · Honors B.S. Electrical & Computer Engineering · 2026
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
   <div class="wrap">
 
-    <div class="highlights">
+    <div class="hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Electrical Engineer
+        </div>
+
+
+        <h1>
+
+          From circuit<br>
+
+          <span>
+            to system.
+          </span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+          I’m Gaurav — an electrical engineer with hands-on experience across
+          aerospace manufacturing, semiconductor equipment R&D, embedded
+          systems, hardware validation, controls, test automation, and
+          wireless sensing.
+
+        </p>
+
+
+        <div class="hero-disciplines">
+
+          <span class="discipline active">
+            Hardware
+          </span>
+
+          <span class="discipline">
+            Embedded
+          </span>
+
+          <span class="discipline">
+            Controls
+          </span>
+
+          <span class="discipline">
+            Test
+          </span>
+
+          <span class="discipline">
+            Manufacturing
+          </span>
+
+        </div>
+
+
+        <div class="buttons">
+
+          <a
+            class="btn primary"
+            href="#experience"
+          >
+            View experience
+          </a>
+
+          <a
+            class="btn"
+            href="#projects"
+          >
+            Explore projects
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="photo-wrap">
+
+        <div class="photo-card">
+
+          <img
+            src="graduation.jpg"
+            alt="Gaurav Dange at Oregon State University graduation"
+            fetchpriority="high"
+          >
+
+          <div class="photo-caption">
+
+            Oregon State University · Honors B.S.
+            Electrical & Computer Engineering · 2026
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="highlights reveal">
 
 
       <div class="highlight">
@@ -791,7 +1640,9 @@
 
 
 
-<!-- EXPERIENCE -->
+<!-- =========================================================
+     EXPERIENCE
+     ========================================================= -->
 
 <section
   class="section"
@@ -800,31 +1651,35 @@
 
   <div class="wrap">
 
-    <div class="eyebrow">
-      01 / Experience
+    <div class="reveal">
+
+      <div class="eyebrow">
+        01 / Experience
+      </div>
+
+      <h2>
+        Engineering in the real world.
+      </h2>
+
+      <p class="intro">
+
+        From semiconductor R&D to aircraft production, my experience has
+        centered on understanding complex systems and translating engineering
+        requirements into hardware, firmware, testing, and manufacturing
+        solutions that work.
+
+      </p>
+
     </div>
-
-    <h2>
-      Engineering in the real world.
-    </h2>
-
-    <p class="intro">
-
-      From semiconductor R&D to aircraft production, my experience has centered
-      on understanding complex systems and turning engineering requirements
-      into hardware, software, tests, and manufacturing solutions that work.
-
-    </p>
 
 
 
     <div class="experience-list">
 
 
-
       <!-- BOEING -->
 
-      <article class="experience-card">
+      <article class="experience-card reveal">
 
         <div class="experience-visual">
 
@@ -832,7 +1687,8 @@
             src="https://www.boeing.cn/upfiles/news/2020050602.jpg"
             alt="Boeing 777X aircraft"
             loading="lazy"
-          />
+            decoding="async"
+          >
 
         </div>
 
@@ -874,33 +1730,54 @@
 
             <li>
 
-              Coordinated with mechanics and engineering teams to resolve build
-              issues, nonconformances, and tooling concerns.
+              Coordinated with mechanics and engineering teams to resolve
+              build issues, nonconformances, and tooling concerns.
 
             </li>
 
             <li>
 
               Supported quality reviews by identifying installation risks,
-              documentation gaps, and process improvement opportunities.
+              documentation gaps, and process improvement areas.
 
             </li>
 
             <li>
 
-              Created CAD-based shop-floor visuals for electrical and mechanical
-              installation support.
+              Created CAD-based shop-floor visuals for electrical and
+              mechanical installation support.
 
             </li>
 
             <li>
 
-              Converted engineering design requirements into simplified work
+              Converted design requirements into simplified work
               instructions for aircraft production use.
 
             </li>
 
           </ul>
+
+
+          <div class="experience-tags">
+
+            <span class="tag">
+              CATIA
+            </span>
+
+            <span class="tag">
+              ENOVIA
+            </span>
+
+            <span class="tag">
+              777X
+            </span>
+
+            <span class="tag">
+              Manufacturing
+            </span>
+
+          </div>
 
 
           <div class="credit">
@@ -915,7 +1792,7 @@
 
       <!-- ICHOR -->
 
-      <article class="experience-card ichor">
+      <article class="experience-card ichor reveal">
 
         <div class="experience-visual">
 
@@ -923,7 +1800,8 @@
             src="ichor-product.png"
             alt="Ichor Systems semiconductor flow-control hardware"
             loading="lazy"
-          />
+            decoding="async"
+          >
 
         </div>
 
@@ -952,68 +1830,73 @@
             <li>
 
               <strong>Firmware —</strong>
-              Released a firmware version that enabled the flow controller to
-              operate and communicate through EtherCAT using a PLC.
+              Released firmware enabling a flow controller to operate
+              and communicate through EtherCAT using a PLC.
 
             </li>
 
             <li>
 
               <strong>Hardware —</strong>
-              Validated new components to ensure electrical compliance and PCB
-              footprint compatibility.
+              Validated new components for electrical compliance and
+              PCB footprint compatibility.
 
             </li>
 
             <li>
 
               <strong>Software —</strong>
-              Built Python-based Hardware API scripts to automate testing and
-              data analysis.
+              Developed Python-based Hardware API scripts for automated
+              testing and data analysis.
 
             </li>
 
             <li>
 
               <strong>PLC —</strong>
-              Programmed and integrated PLC systems with embedded
-              firmware-controlled hardware.
-
-            </li>
-
-            <li>
-
-              <strong>Mechanical —</strong>
-              Assisted in assembling flow controller builds and performing
-              quality checks on PCBs and pressure transducers.
+              Gained hands-on experience programming and integrating
+              PLC systems with embedded controllers.
 
             </li>
 
             <li>
 
               <strong>Testing —</strong>
-              Conducted integrity testing using automated test stands and manual
-              valve setups.
-
-            </li>
-
-            <li>
-
-              <strong>Technical Documentation —</strong>
-              Authored setup and integration guides for the development
-              environment and EtherCAT communication.
+              Conducted integrity testing with automated test stands
+              and manual valve setups.
 
             </li>
 
             <li>
 
               <strong>Tooling —</strong>
-              Used J-Link, GDB Server, and embedded development tools for
-              firmware validation and system bring-up.
+              Used J-Link, GDB Server, and embedded development tools
+              for firmware validation and system bring-up.
 
             </li>
 
           </ul>
+
+
+          <div class="experience-tags">
+
+            <span class="tag">
+              EtherCAT
+            </span>
+
+            <span class="tag">
+              PLC
+            </span>
+
+            <span class="tag">
+              Python
+            </span>
+
+            <span class="tag">
+              Hardware Validation
+            </span>
+
+          </div>
 
 
           <div class="credit">
@@ -1024,19 +1907,22 @@
 
       </article>
 
+
     </div>
 
 
 
-    <!-- OTHER EXPERIENCE -->
+    <h3 class="other-title reveal">
+      Additional experience & leadership
+    </h3>
+
 
     <div class="other-roles">
 
 
-
       <!-- UIT -->
 
-      <div class="role">
+      <div class="role reveal">
 
         <div>
 
@@ -1060,28 +1946,38 @@
           <ul>
 
             <li>
-              Provided technical support across 12 colleges within the OSU
-              community and managed support-ticket requests.
+
+              Provided comprehensive IT technical support across
+              12 colleges within Oregon State University.
+
             </li>
 
             <li>
-              Diagnosed and resolved software, operating-system, computer,
-              peripheral, and network issues.
+
+              Diagnosed and resolved software, computer, peripheral,
+              operating-system, and network issues.
+
             </li>
 
             <li>
-              Conducted technician training sessions and created instructional
-              documentation for software installation procedures.
+
+              Conducted technician training and created instructional
+              documentation.
+
             </li>
 
             <li>
-              Managed computer builds including imaging, backups, BIOS setup,
-              and network provisioning.
+
+              Managed computer builds including imaging, backup,
+              BIOS configuration, and network provisioning.
+
             </li>
 
             <li>
-              Performed Windows updates, BIOS updates, software installation,
-              printer configuration, and post-image system cleanup.
+
+              Performed Windows updates, BIOS updates, software
+              installation, printer configuration, and system cleanup.
+
             </li>
 
           </ul>
@@ -1092,9 +1988,9 @@
 
 
 
-      <!-- HONORS AMBASSADOR -->
+      <!-- HONORS -->
 
-      <div class="role">
+      <div class="role reveal">
 
         <div>
 
@@ -1119,22 +2015,22 @@
 
             <li>
 
-              Promoted Honors College programs and initiatives while engaging
-              with more than 500 prospective students and university partners.
+              Promoted Honors College initiatives while engaging
+              with more than 500 prospective students and partners.
 
             </li>
 
             <li>
 
-              Supported administrative operations and helped manage events for
-              200+ students.
+              Supported administrative operations and events
+              serving more than 200 students.
 
             </li>
 
             <li>
 
-              Helped foster an inclusive Honors College community by connecting
-              students from diverse backgrounds and experiences.
+              Helped foster an inclusive and connected Honors
+              College community.
 
             </li>
 
@@ -1146,9 +2042,9 @@
 
 
 
-      <!-- TABLE TENNIS PRESIDENT -->
+      <!-- PRESIDENT -->
 
-      <div class="role">
+      <div class="role reveal">
 
         <div>
 
@@ -1172,22 +2068,24 @@
           <ul>
 
             <li>
-              Oversaw club operations, event planning, tournament organization,
+
+              Oversaw club operations, tournaments, events,
               and member engagement.
+
             </li>
 
             <li>
-              Coordinated with recreation-center leadership to secure facilities
-              and support for events.
+
+              Coordinated with university recreation leadership
+              to secure facilities and event support.
+
             </li>
 
             <li>
-              Managed club resources and budget allocation.
-            </li>
 
-            <li>
-              Led initiatives to increase student participation and create a
-              welcoming community.
+              Managed club resources and led initiatives
+              to increase student participation.
+
             </li>
 
           </ul>
@@ -1195,54 +2093,6 @@
         </div>
 
       </div>
-
-
-
-      <!-- TREASURER -->
-
-      <div class="role">
-
-        <div>
-
-          <div class="role-date">
-            APR 2022 – MAR 2025
-          </div>
-
-          <div class="role-company">
-            Oregon State University
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <h3>
-            Treasurer · Table Tennis Club
-          </h3>
-
-          <ul>
-
-            <li>
-              Managed the club finance account, annual budget reports, dues,
-              reimbursements, and expenditures.
-            </li>
-
-            <li>
-              Organized fundraising activities to support club operations.
-            </li>
-
-            <li>
-              Coordinated with university officials to maintain transparent and
-              responsible financial operations.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
 
 
     </div>
@@ -1253,7 +2103,9 @@
 
 
 
-<!-- PROJECTS -->
+<!-- =========================================================
+     PROJECTS
+     ========================================================= -->
 
 <section
   class="section"
@@ -1262,21 +2114,76 @@
 
   <div class="wrap">
 
-    <div class="eyebrow">
-      02 / Selected Engineering Work
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+        02 / Selected Engineering Work
+      </div>
+
+      <h2>
+        Hardware, systems, and engineering problems.
+      </h2>
+
+      <p class="intro">
+
+        Selected work across hardware design, embedded systems, controls,
+        wireless communication, component validation, RF, and aerospace
+        manufacturing.
+
+      </p>
+
     </div>
 
-    <h2>
-      Hardware, systems, and engineering problems.
-    </h2>
 
-    <p class="intro">
 
-      A selection of projects from coursework, research, Boeing, and Ichor that
-      best represent the kind of engineering work I enjoy — hardware design,
-      embedded systems, system integration, test, and troubleshooting.
+    <!-- FILTER BUTTONS -->
 
-    </p>
+    <div class="filters reveal">
+
+      <button
+        class="filter-btn active"
+        data-filter="all"
+      >
+        All
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="hardware"
+      >
+        Hardware
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="embedded"
+      >
+        Embedded
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="controls"
+      >
+        Controls
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="rf"
+      >
+        RF / Wireless
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="manufacturing"
+      >
+        Manufacturing
+      </button>
+
+    </div>
 
 
 
@@ -1284,9 +2191,14 @@
 
 
 
-      <!-- LORA -->
+      <!-- =====================================================
+           LORA
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="embedded rf hardware"
+      >
 
         <div class="eyebrow">
           Capstone · Wireless Systems
@@ -1296,66 +2208,184 @@
           LoRa Wildfire Detection Network
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Led development of a multi-node wildfire-detection system designed to
-          explore long-range environmental sensing in areas where conventional
-          network infrastructure may be limited.
+          Led development of a multi-node wildfire-detection system
+          designed to explore long-range environmental sensing in areas
+          where conventional communication infrastructure may be limited.
 
         </p>
 
 
-        <ul>
+        <div class="tags">
 
-          <li>
+          <span class="tag">
+            ESP32
+          </span>
 
-            Integrated ESP32 controllers with RFM95W LoRa radios, BME280
-            environmental sensors, MQ-2 smoke sensing, displays, and power
-            regulation.
+          <span class="tag">
+            RFM95W
+          </span>
 
-          </li>
+          <span class="tag">
+            915 MHz LoRa
+          </span>
 
-          <li>
-
-            Developed a transmitter → relay → receiver network architecture with
-            TTL-based multi-hop packet forwarding.
-
-          </li>
-
-          <li>
-
-            Studied chirp spread spectrum and evaluated trade-offs between
-            communication range, reliability, latency, and power consumption.
-
-          </li>
-
-          <li>
-
-            Performed outdoor field testing and evaluated packet delivery,
-            signal behavior, network latency, and practical deployment
-            constraints.
-
-          </li>
-
-        </ul>
-
-
-        <div class="result">
-
-          <strong>Result:</strong>
-          Communicated over at least 500 m during outdoor testing and received
-          Oregon State University’s Environmental Impact Award.
+          <span class="tag">
+            Wireless Sensors
+          </span>
 
         </div>
 
 
-        <div class="tags">
 
-          <span class="tag">ESP32</span>
-          <span class="tag">RFM95W</span>
-          <span class="tag">LoRa</span>
-          <span class="tag">915 MHz</span>
-          <span class="tag">Wireless Sensors</span>
+        <!-- LORA DIAGRAM -->
+
+        <div class="lora-diagram">
+
+          <div class="node">
+
+            <strong>
+              Sensor Node
+            </strong>
+
+            <small>
+              ESP32 · RFM95W
+            </small>
+
+          </div>
+
+
+          <div class="radio-link">
+
+            <span class="radio-label">
+              LoRa
+            </span>
+
+          </div>
+
+
+          <div class="node">
+
+            <strong>
+              Relay
+            </strong>
+
+            <small>
+              TTL forwarding
+            </small>
+
+          </div>
+
+
+          <div class="radio-link">
+
+            <span class="radio-label">
+              LoRa
+            </span>
+
+          </div>
+
+
+          <div class="node">
+
+            <strong>
+              Receiver
+            </strong>
+
+            <small>
+              Sensor data
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <button class="case-button">
+
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Problem
+              </strong>
+
+              <p>
+
+                Explore whether low-cost sensors could communicate
+                reliably across useful distances for remote wildfire
+                monitoring.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Architecture
+              </strong>
+
+              <p>
+
+                ESP32 nodes, RFM95W radios, BME280 environmental
+                sensing, MQ-2 smoke sensing, relay nodes, and receiver.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                My Work
+              </strong>
+
+              <p>
+
+                Team leadership, system integration, LoRa research,
+                wireless testing, architecture, hardware integration,
+                and performance analysis.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Outcome
+              </strong>
+
+              <p>
+
+                Demonstrated communication over at least 500 m and
+                received Oregon State University's Environmental
+                Impact Award.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1363,9 +2393,14 @@
 
 
 
-      <!-- CMOS -->
+      <!-- =====================================================
+           CMOS
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="hardware"
+      >
 
         <div class="eyebrow">
           Analog IC Design
@@ -1375,53 +2410,112 @@
           Two-Stage CMOS Operational Amplifier
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Designed and simulated a two-stage CMOS operational amplifier at the
-          transistor level in Cadence Virtuoso.
+          Designed and simulated a two-stage CMOS operational amplifier
+          at the transistor level using Cadence Virtuoso.
 
         </p>
 
 
-        <ul>
-
-          <li>
-
-            Designed a PMOS differential input pair with an NMOS active load to
-            convert the differential signal into a single-ended output.
-
-          </li>
-
-          <li>
-
-            Used a common-source second stage to provide additional gain.
-
-          </li>
-
-          <li>
-
-            Explored design trade-offs involving voltage gain, headroom,
-            frequency response, stability, and MOS device sizing.
-
-          </li>
-
-          <li>
-
-            Used simulation and debugging to build intuition around transistor
-            operation, small-signal behavior, and frequency compensation.
-
-          </li>
-
-        </ul>
-
-
         <div class="tags">
 
-          <span class="tag">Cadence Virtuoso</span>
-          <span class="tag">CMOS</span>
-          <span class="tag">Analog Design</span>
-          <span class="tag">Differential Pair</span>
-          <span class="tag">Frequency Compensation</span>
+          <span class="tag">
+            Cadence Virtuoso
+          </span>
+
+          <span class="tag">
+            CMOS
+          </span>
+
+          <span class="tag">
+            Analog Design
+          </span>
+
+        </div>
+
+
+        <button class="case-button">
+
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Input Stage
+              </strong>
+
+              <p>
+
+                PMOS differential input pair with an NMOS active load
+                converting the differential signal to a single-ended output.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Gain Stage
+              </strong>
+
+              <p>
+
+                Common-source second stage used to achieve additional
+                voltage gain.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Trade-offs
+              </strong>
+
+              <p>
+
+                Gain, voltage headroom, device sizing, stability,
+                frequency response, and compensation.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Tools
+              </strong>
+
+              <p>
+
+                Cadence Virtuoso · transistor-level simulation ·
+                small-signal analysis · frequency compensation.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1429,9 +2523,14 @@
 
 
 
-      <!-- EMBEDDED -->
+      <!-- =====================================================
+           EMBEDDED
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="embedded"
+      >
 
         <div class="eyebrow">
           Embedded Systems
@@ -1441,52 +2540,116 @@
           ATmega32U4 Embedded System Design
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Developed low-level embedded firmware in C and AVR Assembly while
-          working directly with microcontroller peripherals and hardware
-          registers.
+          Developed low-level firmware in C and AVR Assembly while
+          directly controlling microcontroller peripherals and hardware.
 
         </p>
 
 
-        <ul>
-
-          <li>
-            Developed an LCD driver from the hardware interface level.
-          </li>
-
-          <li>
-
-            Implemented delay-based, shift-register, and non-blocking debouncing
-            approaches for user inputs.
-
-          </li>
-
-          <li>
-
-            Built motor and LED control systems using hardware timers and PWM.
-
-          </li>
-
-          <li>
-
-            Developed and debugged firmware in a Linux environment using direct
-            access to compilers, build tools, and embedded debugging utilities.
-
-          </li>
-
-        </ul>
-
-
         <div class="tags">
 
-          <span class="tag">ATmega32U4</span>
-          <span class="tag">Embedded C</span>
-          <span class="tag">AVR Assembly</span>
-          <span class="tag">PWM</span>
-          <span class="tag">Timers</span>
-          <span class="tag">Linux</span>
+          <span class="tag">
+            ATmega32U4
+          </span>
+
+          <span class="tag">
+            Embedded C
+          </span>
+
+          <span class="tag">
+            AVR Assembly
+          </span>
+
+          <span class="tag">
+            PWM
+          </span>
+
+        </div>
+
+
+        <button class="case-button">
+
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Display
+              </strong>
+
+              <p>
+
+                Developed an LCD driver directly from the
+                microcontroller interface level.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Inputs
+              </strong>
+
+              <p>
+
+                Implemented delay-based, shift-register,
+                and non-blocking debouncing approaches.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Control
+              </strong>
+
+              <p>
+
+                Built motor and LED control using hardware
+                timers and PWM.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Environment
+              </strong>
+
+              <p>
+
+                Developed in Linux using C, Assembly,
+                compilers, build tools, and debugging utilities.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1494,9 +2657,14 @@
 
 
 
-      <!-- RF -->
+      <!-- =====================================================
+           RF
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="rf hardware"
+      >
 
         <div class="eyebrow">
           RF & Antennas
@@ -1506,46 +2674,84 @@
           Broadside Collinear Dipole Array
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Modeled and analyzed a multi-element dipole antenna array intended to
-          produce broadside radiation for cellular-style coverage.
+          Modeled and analyzed a multi-element dipole array intended
+          to generate broadside radiation for cellular-style coverage.
 
         </p>
 
 
-        <ul>
-
-          <li>
-
-            Used MATLAB to analyze array factor, element spacing, directivity,
-            and sidelobe behavior.
-
-          </li>
-
-          <li>
-
-            Developed the antenna model in HFSS and compared simulated
-            full-wave results with theoretical expectations.
-
-          </li>
-
-          <li>
-
-            Evaluated the relationship between element spacing, radiation
-            pattern shape, and practical coverage.
-
-          </li>
-
-        </ul>
-
-
         <div class="tags">
 
-          <span class="tag">MATLAB</span>
-          <span class="tag">HFSS</span>
-          <span class="tag">RF</span>
-          <span class="tag">Antenna Arrays</span>
+          <span class="tag">
+            MATLAB
+          </span>
+
+          <span class="tag">
+            HFSS
+          </span>
+
+          <span class="tag">
+            RF
+          </span>
+
+          <span class="tag">
+            Antennas
+          </span>
+
+        </div>
+
+
+        <button class="case-button">
+
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Analysis
+              </strong>
+
+              <p>
+
+                Studied array factor, spacing, directivity,
+                sidelobes, and radiation pattern behavior.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Simulation
+              </strong>
+
+              <p>
+
+                Built the antenna geometry in HFSS and compared
+                full-wave results with analytical expectations.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1553,9 +2759,14 @@
 
 
 
-      <!-- ICHOR COUPLED INDUCTOR EOL -->
+      <!-- =====================================================
+           ICHOR EOL
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="hardware"
+      >
 
         <div class="eyebrow">
           Ichor Systems · Hardware Validation
@@ -1565,7 +2776,7 @@
           Coupled Inductor EOL Replacement
         </h3>
 
-        <p>
+        <p class="project-summary">
 
           Evaluated a replacement coupled inductor for a high-voltage
           piezo-drive circuit after the existing component reached
@@ -1574,56 +2785,106 @@
         </p>
 
 
-        <ul>
+        <div class="tags">
 
-          <li>
+          <span class="tag">
+            Hardware Validation
+          </span>
 
-            Reviewed electrical specifications, operating requirements, PCB
-            footprint constraints, and component characteristics to identify
-            replacement candidates.
+          <span class="tag">
+            DRV2700EVM
+          </span>
 
-          </li>
-
-          <li>
-
-            Used the DRV2700EVM piezo-driver platform as a reference baseline
-            for evaluating circuit behavior.
-
-          </li>
-
-          <li>
-
-            Compared output behavior, voltage performance, and ripple to
-            determine whether the replacement component could meet the design
-            requirements.
-
-          </li>
-
-          <li>
-
-            Performed hardware verification to reduce the risk of replacing the
-            discontinued component in production hardware.
-
-          </li>
-
-        </ul>
-
-
-        <div class="result">
-
-          <strong>Focus:</strong>
-          Component qualification · electrical verification · EOL mitigation ·
-          hardware reliability
+          <span class="tag">
+            EOL Mitigation
+          </span>
 
         </div>
 
 
-        <div class="tags">
+        <button class="case-button">
 
-          <span class="tag">Coupled Inductor</span>
-          <span class="tag">DRV2700EVM</span>
-          <span class="tag">Hardware Validation</span>
-          <span class="tag">Component Qualification</span>
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Problem
+              </strong>
+
+              <p>
+
+                A coupled-inductor component used in the piezo-drive
+                architecture reached end-of-life and required a
+                compatible replacement.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Qualification
+              </strong>
+
+              <p>
+
+                Reviewed electrical specifications, operating
+                requirements, footprint constraints, and candidate
+                component characteristics.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Validation
+              </strong>
+
+              <p>
+
+                Used the DRV2700EVM as an electrical baseline and
+                compared output voltage behavior and ripple.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Engineering Focus
+              </strong>
+
+              <p>
+
+                Component qualification · EOL mitigation ·
+                PCB compatibility · electrical verification.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1631,9 +2892,14 @@
 
 
 
-      <!-- ICHOR ETHERCAT -->
+      <!-- =====================================================
+           ETHERCAT
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="embedded controls"
+      >
 
         <div class="eyebrow">
           Ichor Systems · Firmware & Controls
@@ -1643,72 +2909,118 @@
           EtherCAT & PLC Integration
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Integrated EtherCAT communication into an embedded flow-controller
-          platform so the device could be controlled and monitored through a
-          PLC-based automation system.
+          Integrated EtherCAT communication into an embedded
+          flow-controller platform so the device could be controlled
+          through a PLC-based automation system.
 
         </p>
 
 
-        <ul>
+        <div class="tags">
 
-          <li>
+          <span class="tag">
+            EtherCAT
+          </span>
 
-            Developed and validated firmware supporting EtherCAT communication
-            between the embedded controller and PLC.
+          <span class="tag">
+            PLC
+          </span>
 
-          </li>
+          <span class="tag">
+            TwinCAT
+          </span>
 
-          <li>
-
-            Verified EtherCAT device-state transitions including PREOP,
-            SAFEOP, and OP.
-
-          </li>
-
-          <li>
-
-            Debugged communication behavior using J-Link, GDB Server, PLC tools,
-            and embedded development utilities.
-
-          </li>
-
-          <li>
-
-            Validated stable PLC control after firmware initialization and
-            worked toward supporting multi-device daisy-chain operation.
-
-          </li>
-
-          <li>
-
-            Created technical documentation describing development setup and
-            EtherCAT integration.
-
-          </li>
-
-        </ul>
-
-
-        <div class="result">
-
-          <strong>Result:</strong>
-          Demonstrated stable PLC control of the embedded flow controller
-          through EtherCAT.
+          <span class="tag">
+            Firmware
+          </span>
 
         </div>
 
 
-        <div class="tags">
+        <button class="case-button">
 
-          <span class="tag">EtherCAT</span>
-          <span class="tag">PLC</span>
-          <span class="tag">TwinCAT</span>
-          <span class="tag">Embedded Firmware</span>
-          <span class="tag">J-Link</span>
-          <span class="tag">GDB</span>
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Integration
+              </strong>
+
+              <p>
+
+                Developed and validated firmware supporting
+                EtherCAT communication between the embedded controller
+                and PLC.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                State Machine
+              </strong>
+
+              <p>
+
+                Verified EtherCAT transitions through PREOP,
+                SAFEOP, and OP states.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Debugging
+              </strong>
+
+              <p>
+
+                Used J-Link, GDB Server, PLC tools, and embedded
+                development utilities for system bring-up.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Result
+              </strong>
+
+              <p>
+
+                Demonstrated stable PLC control of the embedded
+                flow controller through EtherCAT.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -1716,82 +3028,139 @@
 
 
 
-      <!-- BOEING PROJECT -->
+      <!-- =====================================================
+           BOEING
+           ===================================================== -->
 
-      <article class="project">
+      <article
+        class="project reveal"
+        data-category="manufacturing"
+      >
 
         <div class="eyebrow">
           Boeing · Manufacturing Engineering
         </div>
 
         <h3>
-          777X Installation Visualization & Work Instructions
+          777X Installation Visualization
         </h3>
 
-        <p>
+        <p class="project-summary">
 
-          Improved aircraft installation documentation by converting complex
-          engineering geometry into visual instructions that better reflected
-          how mechanics actually performed the installation.
+          Improved aircraft installation documentation by converting
+          complex engineering geometry into visuals better aligned with
+          the mechanic's working perspective.
 
         </p>
 
 
-        <ul>
+        <div class="tags">
 
-          <li>
+          <span class="tag">
+            CATIA
+          </span>
 
-            Identified cases where traditional top-down engineering drawings did
-            not clearly communicate installation geometry from the mechanic’s
-            working perspective.
+          <span class="tag">
+            777X
+          </span>
 
-          </li>
+          <span class="tag">
+            Manufacturing
+          </span>
 
-          <li>
-
-            Used CATIA geometry and aircraft design data to create clearer,
-            mechanic-oriented installation graphics.
-
-          </li>
-
-          <li>
-
-            Applied the approach to trim-air-duct installation work involving
-            recurring manufacturing nonconformances.
-
-          </li>
-
-          <li>
-
-            Coordinated with manufacturing and design engineering teams to
-            improve installation documentation and reduce ambiguity on the
-            factory floor.
-
-          </li>
-
-        </ul>
-
-
-        <div class="result">
-
-          <strong>Engineering theme:</strong>
-          Turning design intent into clear, usable manufacturing instructions.
+          <span class="tag">
+            Work Instructions
+          </span>
 
         </div>
 
 
-        <div class="tags">
+        <button class="case-button">
 
-          <span class="tag">CATIA</span>
-          <span class="tag">777X</span>
-          <span class="tag">Manufacturing Engineering</span>
-          <span class="tag">Work Instructions</span>
-          <span class="tag">CAD Visualization</span>
+          View case study
+
+          <span>
+            ↓
+          </span>
+
+        </button>
+
+
+        <div class="case-study">
+
+          <div class="case-grid">
+
+
+            <div class="case-item">
+
+              <strong>
+                Problem
+              </strong>
+
+              <p>
+
+                Traditional top-down engineering views did not always
+                clearly communicate installation geometry from the
+                mechanic's actual working position.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Solution
+              </strong>
+
+              <p>
+
+                Used CATIA geometry and design information to create
+                clearer mechanic-oriented installation visuals.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Application
+              </strong>
+
+              <p>
+
+                Applied the approach to installation work including
+                trim-air-duct related manufacturing concerns.
+
+              </p>
+
+            </div>
+
+
+            <div class="case-item">
+
+              <strong>
+                Collaboration
+              </strong>
+
+              <p>
+
+                Coordinated with manufacturing and design engineers
+                to improve documentation and reduce ambiguity.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
       </article>
-
 
 
     </div>
@@ -1802,7 +3171,9 @@
 
 
 
-<!-- HONORS RESEARCH -->
+<!-- =========================================================
+     RESEARCH
+     ========================================================= -->
 
 <section
   class="section"
@@ -1811,45 +3182,56 @@
 
   <div class="wrap">
 
-    <div class="eyebrow">
-      03 / Honors Research
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+        03 / Honors Research
+      </div>
+
+      <h2>
+        From prototype to research.
+      </h2>
+
     </div>
 
-    <h2>
-      From prototype to research.
-    </h2>
 
 
     <div class="research-grid">
 
 
-      <div class="research-card">
+      <div class="research-card reveal">
 
         <div class="eyebrow">
+
           Honors Thesis · 2026
+
         </div>
+
 
         <h3>
 
-          Theoretical Feasibility Evaluation of LoRa Communication for
-          Wildfire Detection Networks
+          Theoretical Feasibility Evaluation of LoRa Communication
+          for Wildfire Detection Networks
 
         </h3>
 
+
         <p>
 
-          My Honors thesis extended the wildfire-detection capstone by examining
-          whether LoRa communication could realistically support a distributed
-          wildfire sensor network beyond the conditions demonstrated during
-          prototype testing.
+          My Honors thesis extended the wildfire-detection capstone
+          by evaluating whether LoRa communication could realistically
+          support a distributed wildfire sensor network beyond the
+          conditions demonstrated during prototype testing.
 
         </p>
+
 
         <p>
 
           The analysis focused on communication range, packet reliability,
-          latency, environmental propagation loss, relay behavior, and sensor
-          node energy consumption.
+          latency, environmental propagation loss, relay behavior, and
+          sensor-node energy consumption.
 
         </p>
 
@@ -1871,53 +3253,79 @@
 
 
 
-      <div class="research-card">
+      <div class="research-card reveal">
 
-        <h3>
-          Key findings
-        </h3>
+        <div class="finding">
 
-        <ol>
+          <strong>
+            Range
+          </strong>
 
-          <li>
+          <p>
 
-            <strong>Range —</strong>
-            Actual field performance can vary significantly with vegetation,
-            terrain, node placement, and environmental loss.
+            Vegetation, terrain, environmental loss, and node placement
+            can substantially change real-world LoRa performance.
 
-          </li>
+          </p>
 
-          <li>
+        </div>
 
-            <strong>Reliability —</strong>
-            End-to-end delivery decreases as additional independent relay links
-            are added to the communication path.
 
-          </li>
+        <div class="finding">
 
-          <li>
+          <strong>
+            Reliability
+          </strong>
 
-            <strong>Latency —</strong>
-            The approximately 60-second reporting interval has a much greater
-            impact on response time than LoRa packet airtime.
+          <p>
 
-          </li>
+            End-to-end delivery probability decreases as additional
+            relay links are added.
 
-          <li>
+          </p>
 
-            <strong>Energy —</strong>
-            The MQ-2 sensor heater dominates the sensor-node power requirement,
-            while LoRa transmission contributes comparatively little average
-            power.
+        </div>
 
-          </li>
 
-        </ol>
+        <div class="finding">
+
+          <strong>
+            Latency
+          </strong>
+
+          <p>
+
+            The roughly 60-second reporting interval affects response
+            time far more than LoRa packet airtime.
+
+          </p>
+
+        </div>
+
+
+        <div class="finding">
+
+          <strong>
+            Energy
+          </strong>
+
+          <p>
+
+            The MQ-2 heater dominates node power consumption while
+            LoRa transmission contributes comparatively little
+            average power.
+
+          </p>
+
+        </div>
 
 
         <div class="result">
 
-          <strong>Presented:</strong>
+          <strong>
+            Presented:
+          </strong>
+
           August 26, 2026
 
         </div>
@@ -1933,7 +3341,9 @@
 
 
 
-<!-- ABOUT -->
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
 
 <section
   class="section"
@@ -1942,34 +3352,39 @@
 
   <div class="wrap">
 
-    <div class="eyebrow">
-      04 / About
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+        04 / About
+      </div>
+
+      <h2>
+
+        I like understanding how things work —
+        then making them work better.
+
+      </h2>
+
+
+      <p class="intro">
+
+        I graduated from Oregon State University with an Honors B.S.
+        in Electrical and Computer Engineering and a Minor in Computer
+        Science. My experience spans electrical hardware, embedded systems,
+        semiconductor equipment R&D, aerospace manufacturing, controls,
+        RF, wireless communication, and automated test.
+
+      </p>
+
     </div>
-
-    <h2>
-
-      I like understanding how things work —
-      then making them work better.
-
-    </h2>
-
-
-    <p class="intro">
-
-      I graduated from Oregon State University with an Honors B.S. in
-      Electrical and Computer Engineering and a Minor in Computer Science.
-      My experience spans electrical hardware, embedded systems, semiconductor
-      equipment R&D, aerospace manufacturing, controls, wireless communication,
-      analog design, and automated test.
-
-    </p>
 
 
 
     <div class="skills">
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
           Circuits & Hardware
@@ -1977,15 +3392,15 @@
 
         <p>
 
-          Cadence Virtuoso · OrCAD / Allegro · KiCad · LTspice · NgSpice ·
-          Component Validation · PCB Integration
+          Cadence Virtuoso · OrCAD / Allegro · KiCad · LTspice ·
+          NgSpice · component validation · PCB integration
 
         </p>
 
       </div>
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
           Embedded & Software
@@ -1993,15 +3408,15 @@
 
         <p>
 
-          C · C++ · Python · AVR Assembly · ESP32 · ATmega32U4 · Arduino ·
-          Linux
+          C · C++ · Python · AVR Assembly · ESP32 ·
+          ATmega32U4 · Arduino · Linux
 
         </p>
 
       </div>
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
           Controls & Verification
@@ -2009,15 +3424,15 @@
 
         <p>
 
-          EtherCAT · PLCs · TwinCAT · J-Link · GDB Server · Hardware Test ·
-          System Bring-Up
+          EtherCAT · PLCs · TwinCAT · J-Link · GDB Server ·
+          hardware testing · system bring-up
 
         </p>
 
       </div>
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
           RF & Digital
@@ -2025,14 +3440,15 @@
 
         <p>
 
-          MATLAB · HFSS · LoRa · SystemVerilog · ModelSim · Intel Quartus Prime
+          MATLAB · HFSS · LoRa · SystemVerilog ·
+          ModelSim · Intel Quartus Prime
 
         </p>
 
       </div>
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
           Manufacturing & CAD
@@ -2040,24 +3456,24 @@
 
         <p>
 
-          CATIA · IVT · ENOVIA · SolidWorks · BOM Review · Work Instructions ·
-          Manufacturing Support
+          CATIA · IVT · ENOVIA · SolidWorks · BOM review ·
+          work instructions · manufacturing support
 
         </p>
 
       </div>
 
 
-      <div class="skill">
+      <div class="skill reveal">
 
         <h3>
-          Technical Strengths
+          Engineering Strengths
         </h3>
 
         <p>
 
-          Hardware Troubleshooting · Test Automation · Technical Documentation ·
-          System Integration · Cross-Functional Engineering
+          Hardware troubleshooting · technical documentation ·
+          test automation · system integration · cross-functional work
 
         </p>
 
@@ -2068,7 +3484,7 @@
 
 
 
-    <div class="awards">
+    <div class="awards reveal">
 
       <span class="award">
         Environmental Impact Award
@@ -2092,13 +3508,16 @@
 
     </div>
 
+
   </div>
 
 </section>
 
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <footer>
 
@@ -2106,15 +3525,17 @@
 
     <div class="eyebrow">
 
-      Hardware · Embedded Systems · Test · Controls · Manufacturing
+      Hardware · Embedded · Controls · Test · Manufacturing
 
     </div>
+
 
     <h2 class="footer-title">
 
       Building useful systems from the hardware up.
 
     </h2>
+
 
     <div class="small">
 
@@ -2126,6 +3547,314 @@
 
 </footer>
 
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+  /* =======================================================
+     SCROLL REVEAL
+     ======================================================= */
+
+  const revealObserver =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target
+              .classList
+              .add("visible");
+
+            revealObserver
+              .unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold:0.12
+      }
+
+    );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+
+  /* =======================================================
+     ACTIVE NAVIGATION
+     ======================================================= */
+
+  const pageSections =
+    document.querySelectorAll(
+      "#experience, #projects, #research, #about"
+    );
+
+
+  const navLinks =
+    document.querySelectorAll(
+      ".nav-links a"
+    );
+
+
+  const navObserver =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            navLinks.forEach(link => {
+
+              link.classList.remove("active");
+
+            });
+
+
+            const activeLink =
+              document.querySelector(
+                `.nav-links a[data-section="${entry.target.id}"]`
+              );
+
+
+            if(activeLink){
+
+              activeLink
+                .classList
+                .add("active");
+
+            }
+
+          }
+
+        });
+
+      },
+
+      {
+        rootMargin:
+          "-35% 0px -55% 0px"
+      }
+
+    );
+
+
+  pageSections.forEach(section => {
+
+    navObserver.observe(section);
+
+  });
+
+
+
+  /* =======================================================
+     PROJECT FILTERS
+     ======================================================= */
+
+  const filterButtons =
+    document.querySelectorAll(
+      ".filter-btn"
+    );
+
+
+  const projects =
+    document.querySelectorAll(
+      ".project"
+    );
+
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        filterButtons.forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
+
+        button
+          .classList
+          .add("active");
+
+
+        const filter =
+          button.dataset.filter;
+
+
+        projects.forEach(project => {
+
+          const categories =
+            project.dataset.category || "";
+
+
+          if(
+            filter === "all" ||
+            categories.includes(filter)
+          ){
+
+            project.classList.remove("hidden");
+
+          }
+          else{
+
+            project.classList.add("hidden");
+
+          }
+
+        });
+
+      }
+    );
+
+  });
+
+
+
+  /* =======================================================
+     EXPANDABLE CASE STUDIES
+     ======================================================= */
+
+  document
+    .querySelectorAll(".case-button")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const project =
+            button.closest(".project");
+
+
+          const isOpen =
+            project
+              .classList
+              .toggle("open");
+
+
+          button
+            .childNodes[0]
+            .textContent =
+              isOpen
+              ? "Close case study "
+              : "View case study ";
+
+        }
+      );
+
+    });
+
+
+
+  /* =======================================================
+     PROJECT MOUSE GLOW
+     ======================================================= */
+
+  document
+    .querySelectorAll(".project")
+    .forEach(card => {
+
+      card.addEventListener(
+        "mousemove",
+        event => {
+
+          const rect =
+            card.getBoundingClientRect();
+
+
+          const x =
+            event.clientX - rect.left;
+
+
+          const y =
+            event.clientY - rect.top;
+
+
+          card.style.setProperty(
+            "--mouse-x",
+            `${x}px`
+          );
+
+
+          card.style.setProperty(
+            "--mouse-y",
+            `${y}px`
+          );
+
+        }
+      );
+
+    });
+
+
+
+  /* =======================================================
+     HERO DISCIPLINE HIGHLIGHT
+     ======================================================= */
+
+  const disciplines =
+    document.querySelectorAll(
+      ".discipline"
+    );
+
+
+  let disciplineIndex = 0;
+
+
+  setInterval(
+    () => {
+
+      disciplines.forEach(item => {
+
+        item.classList.remove("active");
+
+      });
+
+
+      disciplineIndex =
+        (
+          disciplineIndex + 1
+        )
+        %
+        disciplines.length;
+
+
+      disciplines[
+        disciplineIndex
+      ]
+        .classList
+        .add("active");
+
+    },
+
+    1800
+
+  );
+
+</script>
 
 
 </body>
